@@ -10,6 +10,16 @@ import UIKit
 
 class AddItemsViewController: UIViewController {
 
+    @IBOutlet weak var addNameItem: UITextField!
+    @IBOutlet weak var addAuthorItem: UITextField!
+    
+    @IBOutlet weak var addInformationItem: UITextField!
+    
+    @IBOutlet weak var addPickerViewItem: UIPickerView!
+    
+    let itemPickerViewTypes = ["Book", "Tablet"]
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,4 +34,22 @@ class AddItemsViewController: UIViewController {
 
 
 
+}
+
+
+extension AddItemsViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+    
+  
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+       return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return itemPickerViewTypes.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return itemPickerViewTypes[row]
+    }
+    
 }

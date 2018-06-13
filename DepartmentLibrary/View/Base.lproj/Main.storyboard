@@ -273,6 +273,10 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="60" id="nhj-l4-gbb"/>
                                                 </constraints>
+                                                <connections>
+                                                    <outlet property="dataSource" destination="6iv-dV-0af" id="EWe-Ei-hds"/>
+                                                    <outlet property="delegate" destination="6iv-dV-0af" id="X9D-aX-rWk"/>
+                                                </connections>
                                             </pickerView>
                                         </subviews>
                                     </stackView>
@@ -293,6 +297,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cai-na-DIQ"/>
                     </view>
+                    <connections>
+                        <outlet property="addAuthorItem" destination="reU-mc-4BX" id="9JX-Kv-nfs"/>
+                        <outlet property="addInformationItem" destination="fVn-8G-2xO" id="UD7-31-Z6l"/>
+                        <outlet property="addNameItem" destination="ca4-mz-WZF" id="Al3-r4-886"/>
+                        <outlet property="addPickerViewItem" destination="l4a-Qe-Voq" id="sfh-OH-BJx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kna-gB-JRy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
