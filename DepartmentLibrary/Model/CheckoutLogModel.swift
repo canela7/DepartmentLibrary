@@ -11,7 +11,6 @@ import Foundation
 
 class CheckoutLogModel  {
     
-    var additionalInformation = ""
     var cin: Int
     var studentName = ""
     var dateBorrowed: Date!

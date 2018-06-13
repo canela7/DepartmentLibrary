@@ -1,0 +1,6 @@
+framework module Pods_DepartmentLibrary {
+  umbrella header "Pods-DepartmentLibrary-umbrella.h"
+
+  export *
+  module * { export * }
+}

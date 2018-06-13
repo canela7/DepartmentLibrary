@@ -216,68 +216,64 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="yEf-N6-sje">
-                                <rect key="frame" x="0.0" y="114" width="375" height="438"/>
+                                <rect key="frame" x="0.0" y="138.5" width="375" height="390"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="95" translatesAutoresizingMaskIntoConstraints="NO" id="Up5-fD-FXL" userLabel="Left Stack View">
-                                        <rect key="frame" x="0.0" y="26" width="73" height="387"/>
+                                        <rect key="frame" x="0.0" y="1.5" width="87.5" height="387.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zug-vj-l5l">
-                                                <rect key="frame" x="0.0" y="0.0" width="72.5" height="20.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="87.5" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zWq-do-3aD">
-                                                <rect key="frame" x="0.0" y="115.5" width="72.5" height="20.5"/>
+                                                <rect key="frame" x="0.0" y="115.5" width="87.5" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Additional Information" textAlignment="natural" lineBreakMode="middleTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ilu-ym-OV5">
-                                                <rect key="frame" x="0.0" y="231" width="72.5" height="41"/>
+                                                <rect key="frame" x="0.0" y="231" width="87.5" height="41"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Item Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="zNc-sW-sae">
-                                                <rect key="frame" x="0.0" y="367" width="72.5" height="20.5"/>
+                                                <rect key="frame" x="0.0" y="367" width="87.5" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="66" translatesAutoresizingMaskIntoConstraints="NO" id="9lr-NA-nyD" userLabel="Right Stack View">
-                                        <rect key="frame" x="73" y="0.0" width="302" height="438"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="90" translatesAutoresizingMaskIntoConstraints="NO" id="9lr-NA-nyD" userLabel="Right Stack View">
+                                        <rect key="frame" x="87.5" y="0.0" width="287.5" height="390"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Name of Item" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ca4-mz-WZF">
-                                                <rect key="frame" x="0.0" y="0.0" width="302.5" height="60"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="287.5" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Author of Item" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="reU-mc-4BX">
-                                                <rect key="frame" x="0.0" y="126" width="302.5" height="60"/>
+                                                <rect key="frame" x="0.0" y="120" width="287.5" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Information about the Item." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fVn-8G-2xO">
-                                                <rect key="frame" x="0.0" y="252" width="302.5" height="60"/>
+                                                <rect key="frame" x="0.0" y="240" width="287.5" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l4a-Qe-Voq">
-                                                <rect key="frame" x="0.0" y="378" width="302.5" height="60"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="60" id="nhj-l4-gbb"/>
-                                                </constraints>
-                                                <connections>
-                                                    <outlet property="dataSource" destination="6iv-dV-0af" id="EWe-Ei-hds"/>
-                                                    <outlet property="delegate" destination="6iv-dV-0af" id="X9D-aX-rWk"/>
-                                                </connections>
-                                            </pickerView>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Select item Type" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Y1P-z7-BAJ">
+                                                <rect key="frame" x="0.0" y="360" width="287.5" height="30"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
                                         </subviews>
                                     </stackView>
                                 </subviews>
@@ -287,6 +283,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <inset key="contentEdgeInsets" minX="20" minY="10" maxX="20" maxY="10"/>
                                 <state key="normal" title="Add Item"/>
+                                <connections>
+                                    <action selector="addItemPressed:" destination="6iv-dV-0af" eventType="touchUpInside" id="lRf-nb-Kaf"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -298,10 +297,10 @@
                         <viewLayoutGuide key="safeArea" id="cai-na-DIQ"/>
                     </view>
                     <connections>
-                        <outlet property="addAuthorItem" destination="reU-mc-4BX" id="9JX-Kv-nfs"/>
-                        <outlet property="addInformationItem" destination="fVn-8G-2xO" id="UD7-31-Z6l"/>
-                        <outlet property="addNameItem" destination="ca4-mz-WZF" id="Al3-r4-886"/>
-                        <outlet property="addPickerViewItem" destination="l4a-Qe-Voq" id="sfh-OH-BJx"/>
+                        <outlet property="authorTextField" destination="reU-mc-4BX" id="PvF-wF-BBS"/>
+                        <outlet property="informationTextField" destination="fVn-8G-2xO" id="8rv-Rf-kK5"/>
+                        <outlet property="itemNameTextField" destination="ca4-mz-WZF" id="dwR-eD-6W0"/>
+                        <outlet property="typeTextField" destination="Y1P-z7-BAJ" id="XbU-fv-ctA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kna-gB-JRy" userLabel="First Responder" sceneMemberID="firstResponder"/>
