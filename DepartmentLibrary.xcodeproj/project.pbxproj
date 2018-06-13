@@ -15,6 +15,8 @@
 		DA2D8E4D20D08B8A00B6529D /* DepartmentLibraryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2D8E4C20D08B8A00B6529D /* DepartmentLibraryTableViewController.swift */; };
 		DA2D8E5120D08CE400B6529D /* AddItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2D8E5020D08CE400B6529D /* AddItemsViewController.swift */; };
 		DA2D8E5320D093A500B6529D /* DepartmentLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2D8E5220D093A500B6529D /* DepartmentLibrary.swift */; };
+		DA2D8E5620D0DF3F00B6529D /* CheckoutLogModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2D8E5520D0DF3F00B6529D /* CheckoutLogModel.swift */; };
+		DA2D8E5820D0E0AA00B6529D /* CheckoutLogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2D8E5720D0E0AA00B6529D /* CheckoutLogViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		DA2D8E4C20D08B8A00B6529D /* DepartmentLibraryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentLibraryTableViewController.swift; sourceTree = "<group>"; };
 		DA2D8E5020D08CE400B6529D /* AddItemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemsViewController.swift; sourceTree = "<group>"; };
 		DA2D8E5220D093A500B6529D /* DepartmentLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentLibrary.swift; sourceTree = "<group>"; };
+		DA2D8E5520D0DF3F00B6529D /* CheckoutLogModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutLogModel.swift; sourceTree = "<group>"; };
+		DA2D8E5720D0E0AA00B6529D /* CheckoutLogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutLogViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +80,7 @@
 				DA2D8E3C20D06B9D00B6529D /* ViewController.swift */,
 				DA2D8E4C20D08B8A00B6529D /* DepartmentLibraryTableViewController.swift */,
 				DA2D8E5020D08CE400B6529D /* AddItemsViewController.swift */,
+				DA2D8E5720D0E0AA00B6529D /* CheckoutLogViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -93,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				DA2D8E5220D093A500B6529D /* DepartmentLibrary.swift */,
+				DA2D8E5520D0DF3F00B6529D /* CheckoutLogModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -171,7 +177,9 @@
 				DA2D8E3D20D06B9D00B6529D /* ViewController.swift in Sources */,
 				DA2D8E5120D08CE400B6529D /* AddItemsViewController.swift in Sources */,
 				DA2D8E5320D093A500B6529D /* DepartmentLibrary.swift in Sources */,
+				DA2D8E5820D0E0AA00B6529D /* CheckoutLogViewController.swift in Sources */,
 				DA2D8E4D20D08B8A00B6529D /* DepartmentLibraryTableViewController.swift in Sources */,
+				DA2D8E5620D0DF3F00B6529D /* CheckoutLogModel.swift in Sources */,
 				DA2D8E3B20D06B9D00B6529D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
