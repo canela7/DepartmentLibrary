@@ -255,24 +255,36 @@
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="6iv-dV-0af" id="xDM-zN-2ec"/>
+                                                </connections>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Author of Item" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="reU-mc-4BX">
                                                 <rect key="frame" x="0.0" y="120" width="287.5" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="6iv-dV-0af" id="Vkt-w1-7oY"/>
+                                                </connections>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Information about the Item." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fVn-8G-2xO">
                                                 <rect key="frame" x="0.0" y="240" width="287.5" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="6iv-dV-0af" id="uL7-f6-wFj"/>
+                                                </connections>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Select item Type" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Y1P-z7-BAJ">
                                                 <rect key="frame" x="0.0" y="360" width="287.5" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="6iv-dV-0af" id="JAx-ET-0CY"/>
+                                                </connections>
                                             </textField>
                                         </subviews>
                                     </stackView>
@@ -297,6 +309,7 @@
                         <viewLayoutGuide key="safeArea" id="cai-na-DIQ"/>
                     </view>
                     <connections>
+                        <outlet property="addItemButtonPressed" destination="wYm-5x-fct" id="5bU-9y-qXy"/>
                         <outlet property="authorTextField" destination="reU-mc-4BX" id="PvF-wF-BBS"/>
                         <outlet property="informationTextField" destination="fVn-8G-2xO" id="8rv-Rf-kK5"/>
                         <outlet property="itemNameTextField" destination="ca4-mz-WZF" id="dwR-eD-6W0"/>

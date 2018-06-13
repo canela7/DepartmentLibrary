@@ -8,8 +8,10 @@
 
 import UIKit
 
-class AddItemsViewController: UIViewController {
+class AddItemsViewController: UIViewController, UITextFieldDelegate {
 
+    @IBOutlet weak var addItemButtonPressed: UIButton!
+    
     @IBOutlet weak var itemNameTextField: UITextField!
     
     @IBOutlet weak var authorTextField: UITextField!
@@ -34,32 +36,57 @@ class AddItemsViewController: UIViewController {
         
         
         typeTextField.inputView = pickerView
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         
+        if itemNameTextField.text == "" && authorTextField.text == "" && informationTextField.text == ""
+        {
+            addItemButtonPressed.isHidden = true
+        }
         
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    //MARK: Texfield methods
+    override open func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == itemNameTextField {
+            authorTextField.becomeFirstResponder()
+        }else if textField == authorTextField {
+            informationTextField.becomeFirstResponder()
+        }else if textField == informationTextField {
+            typeTextField.becomeFirstResponder()
+        }else if textField == typeTextField {
+            textField.resignFirstResponder()
+        }
+        return true
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        
+        let allInputValues = itemNameTextField.text! + authorTextField.text! + informationTextField.text! + typeTextField.text!
+        
+        if allInputValues == "" {
+            addItemButtonPressed.isHidden = true
+        } else {
+            addItemButtonPressed.isHidden = false
+        }
     }
     
     
     @IBAction func addItemPressed(_ sender: Any) {
         
-        let nameTextfield = itemNameTextField.text!
-        let authorTextfield = authorTextField.text!
-        let informationTextfield = informationTextField.text!
+        guard let nameTextfield = itemNameTextField.text else {fatalError("required item name ")}
+        guard let authorTextfield = authorTextField.text else {fatalError("required author name")}
+        guard let informationTextfield = informationTextField.text else {return print("Required information")}
         
         let type = typeTextField.text!
-
-
-
-
-
+        
         print(nameTextfield, authorTextfield, informationTextfield, type);
 
-        
-        
     }
     
 
