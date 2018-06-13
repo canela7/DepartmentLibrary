@@ -12,6 +12,9 @@
 		DA2D8E4020D06B9D00B6529D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA2D8E3E20D06B9D00B6529D /* Main.storyboard */; };
 		DA2D8E4220D06B9E00B6529D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA2D8E4120D06B9E00B6529D /* Assets.xcassets */; };
 		DA2D8E4520D06B9E00B6529D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA2D8E4320D06B9E00B6529D /* LaunchScreen.storyboard */; };
+		DA2D8E4D20D08B8A00B6529D /* DepartmentLibraryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2D8E4C20D08B8A00B6529D /* DepartmentLibraryTableViewController.swift */; };
+		DA2D8E5120D08CE400B6529D /* AddItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2D8E5020D08CE400B6529D /* AddItemsViewController.swift */; };
+		DA2D8E5320D093A500B6529D /* DepartmentLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2D8E5220D093A500B6529D /* DepartmentLibrary.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,9 @@
 		DA2D8E4120D06B9E00B6529D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DA2D8E4420D06B9E00B6529D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DA2D8E4620D06B9E00B6529D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DA2D8E4C20D08B8A00B6529D /* DepartmentLibraryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentLibraryTableViewController.swift; sourceTree = "<group>"; };
+		DA2D8E5020D08CE400B6529D /* AddItemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemsViewController.swift; sourceTree = "<group>"; };
+		DA2D8E5220D093A500B6529D /* DepartmentLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentLibrary.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,13 +61,40 @@
 			isa = PBXGroup;
 			children = (
 				DA2D8E3A20D06B9D00B6529D /* AppDelegate.swift */,
-				DA2D8E3C20D06B9D00B6529D /* ViewController.swift */,
-				DA2D8E3E20D06B9D00B6529D /* Main.storyboard */,
+				DA2D8E5420D093E400B6529D /* Model */,
+				DA2D8E4F20D08BAA00B6529D /* View */,
+				DA2D8E4E20D08B9700B6529D /* Controller */,
 				DA2D8E4120D06B9E00B6529D /* Assets.xcassets */,
-				DA2D8E4320D06B9E00B6529D /* LaunchScreen.storyboard */,
 				DA2D8E4620D06B9E00B6529D /* Info.plist */,
 			);
 			path = DepartmentLibrary;
+			sourceTree = "<group>";
+		};
+		DA2D8E4E20D08B9700B6529D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				DA2D8E3C20D06B9D00B6529D /* ViewController.swift */,
+				DA2D8E4C20D08B8A00B6529D /* DepartmentLibraryTableViewController.swift */,
+				DA2D8E5020D08CE400B6529D /* AddItemsViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		DA2D8E4F20D08BAA00B6529D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DA2D8E4320D06B9E00B6529D /* LaunchScreen.storyboard */,
+				DA2D8E3E20D06B9D00B6529D /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DA2D8E5420D093E400B6529D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DA2D8E5220D093A500B6529D /* DepartmentLibrary.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,6 +169,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA2D8E3D20D06B9D00B6529D /* ViewController.swift in Sources */,
+				DA2D8E5120D08CE400B6529D /* AddItemsViewController.swift in Sources */,
+				DA2D8E5320D093A500B6529D /* DepartmentLibrary.swift in Sources */,
+				DA2D8E4D20D08B8A00B6529D /* DepartmentLibraryTableViewController.swift in Sources */,
 				DA2D8E3B20D06B9D00B6529D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
