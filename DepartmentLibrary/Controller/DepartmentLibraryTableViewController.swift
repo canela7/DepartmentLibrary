@@ -31,11 +31,13 @@ class DepartmentLibraryTableViewController: UITableViewController {
         let row0Item = DepartmentLibrary()
         row0Item.name = "Cracking the coding Book!";
         row0Item.type = "Book";
+        row0Item.available = false
         items.append(row0Item)
         
         let row1Item = DepartmentLibrary()
         row1Item.name = "Cracking the coding Book!";
         row1Item.type = "Tablet";
+        row1Item.available = true
         items.append(row1Item)
         
         
@@ -43,6 +45,7 @@ class DepartmentLibraryTableViewController: UITableViewController {
         let row2Item = DepartmentLibrary()
         row2Item.name = "Java for Noobs!";
         row2Item.type = "Tablet";
+        row2Item.available = true
         items.append(row2Item)
    
         super.init(coder: aDecoder)
@@ -79,6 +82,12 @@ class DepartmentLibraryTableViewController: UITableViewController {
         
         cell.itemName.text = item.name
         cell.itemType.text = item.type
+        
+        if item.available {
+            cell.isAvailable.text = "Yes"
+        }else {
+            cell.isAvailable.text = "No"
+        }
         
         
         return cell

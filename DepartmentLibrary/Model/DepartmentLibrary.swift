@@ -11,9 +11,13 @@ import Foundation
 
 class DepartmentLibrary {
     
-    var name = ""
-    var type = ""
-    var available = false
+    var name: String = ""
+    var type: String = ""
+    var available: Bool = false
+    
+ 
+    
+    
     
     
     
