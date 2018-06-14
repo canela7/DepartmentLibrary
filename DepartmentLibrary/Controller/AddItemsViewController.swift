@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import RealmSwift
 
 class AddItemsViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var addItemButtonPressed: UIButton!
     
+    @IBOutlet weak var doneBarButtonPressed: UIBarButtonItem!
     @IBOutlet weak var itemNameTextField: UITextField!
     
     @IBOutlet weak var authorTextField: UITextField!
@@ -39,15 +41,16 @@ class AddItemsViewController: UIViewController, UITextFieldDelegate {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        
-        if itemNameTextField.text == "" && authorTextField.text == "" && informationTextField.text == ""
-        {
-            addItemButtonPressed.isHidden = true
+        let allInputValues = itemNameTextField.text! + authorTextField.text! + informationTextField.text! + typeTextField.text!
+        if allInputValues == "" {
+            doneBarButtonPressed.isEnabled = false
         }
         
+        
+
     }
 
-    //MARK: Texfield methods
+    //MARK: TextField Methods
     override open func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
@@ -70,34 +73,48 @@ class AddItemsViewController: UIViewController, UITextFieldDelegate {
         let allInputValues = itemNameTextField.text! + authorTextField.text! + informationTextField.text! + typeTextField.text!
         
         if allInputValues == "" {
-            addItemButtonPressed.isHidden = true
+            doneBarButtonPressed.isEnabled = false
         } else {
-            addItemButtonPressed.isHidden = false
+            doneBarButtonPressed.isEnabled = true
         }
     }
-    
-    
-    @IBAction func addItemPressed(_ sender: Any) {
-        
+ 
+    //Done bar button pressed
+    @IBAction func doneBarButtonPressed(_ sender: Any) {
         guard let nameTextfield = itemNameTextField.text else {fatalError("required item name ")}
         guard let authorTextfield = authorTextField.text else {fatalError("required author name")}
         guard let informationTextfield = informationTextField.text else {return print("Required information")}
-        
-        let type = typeTextField.text!
+        guard let type = typeTextField.text else {fatalError("no type")}
         
         print(nameTextfield, authorTextfield, informationTextfield, type);
-
+        
+        let newItem = DepartmentLibrary()
+        newItem.name = nameTextfield
+        newItem.authorName = authorTextfield
+        newItem.additionalInformation = informationTextfield
+        newItem.type = type
+        newItem.available = true
+        
+        do{
+            let realm = try! Realm()
+            try realm.write {
+                realm.add(newItem)
+            }
+        }catch{
+            print("Error saving context \(error)")
+        }
+        
+        performSegue(withIdentifier: "goToDepartmentLibrary", sender: self)
+        
+        
+        
     }
-    
-
-
 
 }
 
 
 extension AddItemsViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     
-  
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
        return 1
     }
@@ -115,7 +132,5 @@ extension AddItemsViewController: UIPickerViewDelegate, UIPickerViewDataSource {
         typeTextField.text = itemPickerViewTypes[row]
         typeTextField.resignFirstResponder()
     }
-    
-    
     
 }

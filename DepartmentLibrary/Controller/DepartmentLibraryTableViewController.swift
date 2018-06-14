@@ -60,23 +60,15 @@ class DepartmentLibraryTableViewController: UITableViewController {
             cell.itemType.text = "no item type"
             cell.isAvailable.text = "N/A"
         }
-        
-        
-//        cell.itemName.text = item.name
-//        cell.itemType.text = item.type
-//
-//        if item.available {
-//            cell.isAvailable.text = "Yes"
-//        }else {
-//            cell.isAvailable.text = "No"
-//        }
-        
-        
+    
         return cell
     }
     
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        
+        
         tableView.deselectRow(at: indexPath, animated: true)
     }
     

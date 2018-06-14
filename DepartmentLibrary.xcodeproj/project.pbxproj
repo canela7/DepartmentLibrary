@@ -18,6 +18,7 @@
 		DA2D8E5320D093A500B6529D /* DepartmentLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2D8E5220D093A500B6529D /* DepartmentLibrary.swift */; };
 		DA2D8E5620D0DF3F00B6529D /* CheckoutLogModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2D8E5520D0DF3F00B6529D /* CheckoutLogModel.swift */; };
 		DA2D8E5820D0E0AA00B6529D /* CheckoutLogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2D8E5720D0E0AA00B6529D /* CheckoutLogViewController.swift */; };
+		DACAB42420D3175B009A2A2B /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACAB42320D3175B009A2A2B /* EditViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		DA2D8E5220D093A500B6529D /* DepartmentLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentLibrary.swift; sourceTree = "<group>"; };
 		DA2D8E5520D0DF3F00B6529D /* CheckoutLogModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutLogModel.swift; sourceTree = "<group>"; };
 		DA2D8E5720D0E0AA00B6529D /* CheckoutLogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutLogViewController.swift; sourceTree = "<group>"; };
+		DACAB42320D3175B009A2A2B /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
 		E228631B0E3C3445BA0E736A /* Pods-DepartmentLibrary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DepartmentLibrary.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DepartmentLibrary/Pods-DepartmentLibrary.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -104,6 +106,7 @@
 				DA2D8E3C20D06B9D00B6529D /* ViewController.swift */,
 				DA2D8E4C20D08B8A00B6529D /* DepartmentLibraryTableViewController.swift */,
 				DA2D8E5020D08CE400B6529D /* AddItemsViewController.swift */,
+				DACAB42320D3175B009A2A2B /* EditViewController.swift */,
 				DA2D8E5720D0E0AA00B6529D /* CheckoutLogViewController.swift */,
 			);
 			path = Controller;
@@ -241,6 +244,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DACAB42420D3175B009A2A2B /* EditViewController.swift in Sources */,
 				DA2D8E3D20D06B9D00B6529D /* ViewController.swift in Sources */,
 				DA2D8E5120D08CE400B6529D /* AddItemsViewController.swift in Sources */,
 				DA2D8E5320D093A500B6529D /* DepartmentLibrary.swift in Sources */,
