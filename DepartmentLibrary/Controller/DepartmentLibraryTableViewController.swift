@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class CustomCell: UITableViewCell {
     
@@ -20,74 +21,55 @@ class CustomCell: UITableViewCell {
 
 
 class DepartmentLibraryTableViewController: UITableViewController {
-//TESTING GIT PUSH
-    var items: [DepartmentLibrary]
-    
-    
-    required init?(coder aDecoder: NSCoder) {
-        
-        items = [DepartmentLibrary]()
-        
-        let row0Item = DepartmentLibrary()
-        row0Item.name = "Cracking the coding Book!";
-        row0Item.type = "Book";
-        row0Item.available = false
-        items.append(row0Item)
-        
-        let row1Item = DepartmentLibrary()
-        row1Item.name = "Cracking the coding Book!";
-        row1Item.type = "Tablet";
-        row1Item.available = true
-        items.append(row1Item)
-        
-        
-        
-        let row2Item = DepartmentLibrary()
-        row2Item.name = "Java for Noobs!";
-        row2Item.type = "Tablet";
-        row2Item.available = true
-        items.append(row2Item)
-   
-        super.init(coder: aDecoder)
-        
-        
-        
-    }
 
+  
+    //get the results from the database.
+    var libraryItemArray: Results<DepartmentLibrary>?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        loadItems()
         tableView.rowHeight = 110.0;
         
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return items.count
+       
+        return libraryItemArray?.count ?? 1
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "departmentLibraryCell", for: indexPath) as! CustomCell
         
-         let item = items[indexPath.row]
-        
-        
-        cell.itemName.text = item.name
-        cell.itemType.text = item.type
-        
-        if item.available {
-            cell.isAvailable.text = "Yes"
+        if let item = libraryItemArray?[indexPath.row] {
+            cell.itemName.text = item.name
+            cell.itemType.text = item.type
+            
+            if item.available {
+                cell.isAvailable.text = "Yes"
+            }else {
+                cell.isAvailable.text = "No"
+            }
+            
         }else {
-            cell.isAvailable.text = "No"
+            cell.itemName.text = "no item name"
+            cell.itemType.text = "no item type"
+            cell.isAvailable.text = "N/A"
         }
+        
+        
+//        cell.itemName.text = item.name
+//        cell.itemType.text = item.type
+//
+//        if item.available {
+//            cell.isAvailable.text = "Yes"
+//        }else {
+//            cell.isAvailable.text = "No"
+//        }
         
         
         return cell
@@ -98,6 +80,29 @@ class DepartmentLibraryTableViewController: UITableViewController {
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
+    
+    
+    //MARK: Data Manipulation Methods
+    func save(library: DepartmentLibrary){
+        do{
+            let realm = try! Realm()
+            try realm.write {
+                realm.add(library)
+            }
+        }catch{
+            print("Error saving context \(error)")
+        }
+        
+        self.tableView.reloadData()
+    }
+    
+    //get the items from database
+    func loadItems() {
+        let realm = try! Realm()
+        libraryItemArray = realm.objects(DepartmentLibrary.self)
+        
+        self.tableView.reloadData()
+    }
    
 
 
