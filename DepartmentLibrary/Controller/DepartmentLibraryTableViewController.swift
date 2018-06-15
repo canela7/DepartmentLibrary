@@ -79,6 +79,7 @@ class DepartmentLibraryTableViewController: UITableViewController {
     
     
     
+    
     //MARK: Data Manipulation Methods
     func save(library: DepartmentLibrary){
         do{
@@ -103,4 +104,36 @@ class DepartmentLibraryTableViewController: UITableViewController {
    
 
 
+}
+
+
+
+// MARK: - Table View Delegate //DELETE ITEM FROM REALM.!
+extension DepartmentLibraryTableViewController {
+    
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        
+        if let itemForDeletion = libraryItemArray?[indexPath.row] {
+            do{
+                let realm = try! Realm()
+                try realm.write {
+                    realm.delete(itemForDeletion)
+                }
+            }catch{
+                print("Error deleting category \(error)")
+            }
+        }
+        
+        
+        //let indexPaths = [indexPath]
+        tableView.deleteRows(at: [indexPath], with: .fade)
+        
+        
+    }
+    
+    
 }
