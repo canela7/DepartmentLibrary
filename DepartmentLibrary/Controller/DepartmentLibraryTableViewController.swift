@@ -35,6 +35,10 @@ class DepartmentLibraryTableViewController: UITableViewController {
         
     }
 
+    
+    
+    
+    
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -67,6 +71,7 @@ class DepartmentLibraryTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        self.performSegue(withIdentifier: "goToEdit", sender: self)
         
         
         tableView.deselectRow(at: indexPath, animated: true)

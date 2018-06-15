@@ -35,9 +35,10 @@ class AddItemsViewController: UIViewController, UITextFieldDelegate {
 
         pickerView.delegate = self
         pickerView.dataSource = self
-        
-        
         typeTextField.inputView = pickerView
+        
+        
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -46,8 +47,6 @@ class AddItemsViewController: UIViewController, UITextFieldDelegate {
             doneBarButtonPressed.isEnabled = false
         }
         
-        
-
     }
 
     //MARK: TextField Methods
@@ -69,6 +68,8 @@ class AddItemsViewController: UIViewController, UITextFieldDelegate {
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
+        
+        
         
         let allInputValues = itemNameTextField.text! + authorTextField.text! + informationTextField.text! + typeTextField.text!
         

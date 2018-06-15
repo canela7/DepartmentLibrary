@@ -256,24 +256,36 @@
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="lpC-tF-LTf" id="H99-0L-NpG"/>
+                                                </connections>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Author of Item" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="z8G-d7-OSi">
                                                 <rect key="frame" x="0.0" y="120" width="287.5" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="lpC-tF-LTf" id="V0j-ay-iZO"/>
+                                                </connections>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Information about the Item." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hoT-9s-HOW">
                                                 <rect key="frame" x="0.0" y="240" width="287.5" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="lpC-tF-LTf" id="Q4y-ac-t8c"/>
+                                                </connections>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Select item Type" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SiL-Lt-6k0">
                                                 <rect key="frame" x="0.0" y="360" width="287.5" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="lpC-tF-LTf" id="Ogx-42-g4S"/>
+                                                </connections>
                                             </textField>
                                         </subviews>
                                     </stackView>
@@ -293,6 +305,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="YUI-qc-LIh"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="doneBarButtonPressed" destination="YUI-qc-LIh" id="CHX-wi-5xq"/>
                         <outlet property="editAuthorTextField" destination="z8G-d7-OSi" id="NTR-A1-CXS"/>
                         <outlet property="editInformationTextField" destination="hoT-9s-HOW" id="J1C-mt-PRZ"/>
                         <outlet property="editNameTextField" destination="T9q-8e-sBL" id="6WL-Pr-6jg"/>
