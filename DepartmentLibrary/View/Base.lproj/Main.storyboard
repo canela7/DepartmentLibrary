@@ -302,7 +302,11 @@
                         <viewLayoutGuide key="safeArea" id="edX-0O-gig"/>
                     </view>
                     <navigationItem key="navigationItem" title="Edit Item" id="ODO-4O-dm0">
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="YUI-qc-LIh"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="YUI-qc-LIh">
+                            <connections>
+                                <action selector="editDoneBarButtonPressed:" destination="lpC-tF-LTf" id="BgI-UA-Ulb"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="doneBarButtonPressed" destination="YUI-qc-LIh" id="CHX-wi-5xq"/>
@@ -310,11 +314,12 @@
                         <outlet property="editInformationTextField" destination="hoT-9s-HOW" id="J1C-mt-PRZ"/>
                         <outlet property="editNameTextField" destination="T9q-8e-sBL" id="6WL-Pr-6jg"/>
                         <outlet property="editSelectedType" destination="SiL-Lt-6k0" id="2fo-32-DX9"/>
+                        <segue destination="akU-TK-hcg" kind="show" identifier="goToDepartmentLibrayFromEdit" id="cX7-h4-Icg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hts-Hd-ish" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3902" y="133"/>
+            <point key="canvasLocation" x="4146" y="133"/>
         </scene>
         <!--Add Items-->
         <scene sceneID="Dz9-5F-wVu">
@@ -451,6 +456,6 @@
         <image name="background" width="2880" height="5120"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="iVu-N8-nUd"/>
+        <segue reference="cX7-h4-Icg"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -9,6 +9,7 @@
 import UIKit
 import RealmSwift
 
+
 class EditViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var editNameTextField: UITextField!
@@ -26,10 +27,19 @@ class EditViewController: UIViewController, UITextFieldDelegate {
     
     var delegateForEditController: DepartmentLibrary?
     
+    var libraryEditItemArray: Results<DepartmentLibrary>?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        if let editItem = delegateForEditController {
+            title = editItem.name
+            editNameTextField.text = editItem.name
+            editAuthorTextField.text = editItem.authorName
+            editInformationTextField.text = editItem.additionalInformation
+            editSelectedType.text = editItem.type
+        }
         
     }
     
@@ -39,7 +49,7 @@ class EditViewController: UIViewController, UITextFieldDelegate {
         if allInputValues == "" {
             doneBarButtonPressed.isEnabled = false
         }
-        
+
     }
     
     
@@ -61,10 +71,12 @@ class EditViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     
+
+    
     func textFieldDidEndEditing(_ textField: UITextField) {
-        
+
         let allInputValues = editNameTextField.text! + editAuthorTextField.text! + editInformationTextField.text! + editSelectedType.text!
-        
+
         if allInputValues == "" {
             doneBarButtonPressed.isEnabled = false
         } else {
@@ -72,7 +84,34 @@ class EditViewController: UIViewController, UITextFieldDelegate {
         }
     }
 
+    @IBAction func editDoneBarButtonPressed(_ sender: Any) {
+        //update the current realm!
+        guard let nameTextfield = editNameTextField.text else {fatalError("required item name ")}
+        guard let authorTextfield = editAuthorTextField.text else {fatalError("required author name")}
+        guard let informationTextfield = editInformationTextField.text else {return print("Required information")}
+        guard let type = editSelectedType.text else {fatalError("no type")}
 
+        if let editItem = delegateForEditController {
+            do{
+                let realm = try! Realm()
+                try realm.write {
+                    editItem.name = nameTextfield
+                    editItem.authorName = authorTextfield
+                    editItem.additionalInformation = informationTextfield
+                    editItem.type = type
+                }
+            }catch{
+                print("Error deleting category \(error)")
+            }
+        }
+        
+        performSegue(withIdentifier: "goToDepartmentLibrayFromEdit", sender: self)
+        
+        print("Triggered!")
+    }
+    
+    
     
 
 }
+

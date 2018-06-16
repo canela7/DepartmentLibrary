@@ -31,7 +31,8 @@ class DepartmentLibraryTableViewController: UITableViewController {
         super.viewDidLoad()
 
         loadItems()
-        tableView.rowHeight = 110.0;
+        tableView.rowHeight = UITableViewAutomaticDimension;
+        tableView.estimatedRowHeight = 110;
         
     }
 
@@ -75,6 +76,16 @@ class DepartmentLibraryTableViewController: UITableViewController {
         
         
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToEdit" {
+            if let editDestination = segue.destination as? EditViewController {
+                if let index = tableView.indexPathForSelectedRow {
+                    editDestination.delegateForEditController = libraryItemArray?[index.row]
+                }
+            }
+        }
     }
     
     
@@ -128,11 +139,7 @@ extension DepartmentLibraryTableViewController {
             }
         }
         
-        
-        //let indexPaths = [indexPath]
         tableView.deleteRows(at: [indexPath], with: .fade)
-        
-        
     }
     
     
