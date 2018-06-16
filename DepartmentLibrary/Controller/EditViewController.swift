@@ -29,6 +29,8 @@ class EditViewController: UIViewController, UITextFieldDelegate {
     
     var libraryEditItemArray: Results<DepartmentLibrary>?
     
+    let itemPickerViewTypes = ["Book", "Tablet"]
+    var pickerView = UIPickerView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,6 +42,11 @@ class EditViewController: UIViewController, UITextFieldDelegate {
             editInformationTextField.text = editItem.additionalInformation
             editSelectedType.text = editItem.type
         }
+        
+        
+        pickerView.delegate = self
+        pickerView.dataSource = self
+        editSelectedType.inputView = pickerView
         
     }
     
@@ -109,9 +116,29 @@ class EditViewController: UIViewController, UITextFieldDelegate {
         
         print("Triggered!")
     }
-    
-    
-    
-
 }
+
+
+extension EditViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return itemPickerViewTypes.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return itemPickerViewTypes[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        //TODO
+        editSelectedType.text = itemPickerViewTypes[row]
+        editSelectedType.resignFirstResponder()
+    }
+    
+}
+
 
