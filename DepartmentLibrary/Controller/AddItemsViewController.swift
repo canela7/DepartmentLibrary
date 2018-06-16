@@ -88,6 +88,7 @@ class AddItemsViewController: UIViewController, UITextFieldDelegate {
         print(nameTextfield, authorTextfield, informationTextfield, type);
         
         let newItem = DepartmentLibrary()
+        
         newItem.name = nameTextfield
         newItem.authorName = authorTextfield
         newItem.additionalInformation = informationTextfield
@@ -98,7 +99,8 @@ class AddItemsViewController: UIViewController, UITextFieldDelegate {
             let realm = try! Realm()
             try realm.write {
                 realm.add(newItem)
-            }
+              }
+            
         }catch{
             print("Error saving context \(error)")
         }

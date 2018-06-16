@@ -106,9 +106,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="TOq-uI-ezh">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="akU-TK-hcg" id="t0f-27-AwH"/>
+                            </connections>
+                        </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="departmentLibraryCell" rowHeight="110" id="E41-LA-Isf" customClass="CustomCell" customModule="DepartmentLibrary" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="110"/>
+                                <rect key="frame" x="0.0" y="72" width="375" height="110"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="E41-LA-Isf" id="x1b-7P-0tM">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="109.5"/>
@@ -200,6 +208,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="searchBar" destination="TOq-uI-ezh" id="K1v-s6-9Bp"/>
                         <segue destination="RW1-Aq-keL" kind="show" identifier="goToCheckoutLog" id="Olx-1i-lym"/>
                         <segue destination="lpC-tF-LTf" kind="show" identifier="goToEdit" id="X05-Rx-8ph"/>
                     </connections>
@@ -456,6 +465,6 @@
         <image name="background" width="2880" height="5120"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="cX7-h4-Icg"/>
+        <segue reference="FAe-mb-EQl"/>
     </inferredMetricsTieBreakers>
 </document>

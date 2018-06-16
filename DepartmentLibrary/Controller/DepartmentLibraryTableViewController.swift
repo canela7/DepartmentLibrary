@@ -26,6 +26,7 @@ class DepartmentLibraryTableViewController: UITableViewController {
     //get the results from the database.
     var libraryItemArray: Results<DepartmentLibrary>?
     
+    @IBOutlet weak var searchBar: UISearchBar!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -108,7 +109,7 @@ class DepartmentLibraryTableViewController: UITableViewController {
     //get the items from database
     func loadItems() {
         let realm = try! Realm()
-        libraryItemArray = realm.objects(DepartmentLibrary.self)
+        libraryItemArray = realm.objects(DepartmentLibrary.self).sorted(byKeyPath: "available", ascending: false)
         
         self.tableView.reloadData()
     }
@@ -144,3 +145,35 @@ extension DepartmentLibraryTableViewController {
     
     
 }
+
+
+extension DepartmentLibraryTableViewController: UISearchBarDelegate {
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        
+        libraryItemArray = libraryItemArray?.filter("name CONTAINS[cd] %@", searchBar.text!).sorted(byKeyPath: "available", ascending: false)
+        
+        tableView.reloadData()
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchBar.text?.count == 0 {
+            loadItems() //get all the items back if the search bar is empty
+            
+            //ask the dispatch to run code inside the main thread, and run that
+            DispatchQueue.main.async {
+                //keyboard and cursor disappers after we dont have any text inside the search bar
+                searchBar.resignFirstResponder()
+            }
+        }
+    }
+    
+    
+    
+}
+
+
+
+
+
+
