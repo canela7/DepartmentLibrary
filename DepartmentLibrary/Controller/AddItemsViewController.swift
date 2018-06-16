@@ -37,8 +37,6 @@ class AddItemsViewController: UIViewController, UITextFieldDelegate {
         pickerView.dataSource = self
         typeTextField.inputView = pickerView
         
-        
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -46,7 +44,6 @@ class AddItemsViewController: UIViewController, UITextFieldDelegate {
         if allInputValues == "" {
             doneBarButtonPressed.isEnabled = false
         }
-        
     }
 
     //MARK: TextField Methods
@@ -97,10 +94,10 @@ class AddItemsViewController: UIViewController, UITextFieldDelegate {
         
         do{
             let realm = try! Realm()
+            
             try realm.write {
                 realm.add(newItem)
-              }
-            
+            }
         }catch{
             print("Error saving context \(error)")
         }

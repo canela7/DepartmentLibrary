@@ -81,22 +81,92 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1662.5" y="133.5"/>
+            <point key="canvasLocation" x="1654" y="133"/>
         </scene>
-        <!--Checkout Log-->
+        <!--Item Information-->
         <scene sceneID="HXF-wk-a1o">
             <objects>
-                <viewController title="Checkout Log" id="RW1-Aq-keL" customClass="CheckoutLogViewController" customModule="DepartmentLibrary" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Checkout Log" id="RW1-Aq-keL" userLabel="Item Information" customClass="ItemInformationViewController" customModule="DepartmentLibrary" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="AaA-D8-wfz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="70" translatesAutoresizingMaskIntoConstraints="NO" id="fTE-fw-sdP">
+                                <rect key="frame" x="0.0" y="143" width="375" height="382"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cracking the Coding Book!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="u2T-mE-Rbb">
+                                        <rect key="frame" x="86" y="1" width="204" height="19"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Lec-ez-fIf">
+                                        <rect key="frame" x="163" y="89" width="50" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Information" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="LA5-gr-SkD">
+                                        <rect key="frame" x="144" y="179" width="88" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="6Fj-08-q4b">
+                                        <rect key="frame" x="171" y="272" width="34" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Available" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="BFy-ya-LaE">
+                                        <rect key="frame" x="154" y="362" width="67" height="20"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rTY-5x-Pbk">
+                                <rect key="frame" x="134" y="601" width="106" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <inset key="contentEdgeInsets" minX="20" minY="10" maxX="20" maxY="10"/>
+                                <state key="normal" title="Checkout">
+                                    <color key="titleColor" red="0.96460121870000004" green="0.96476620440000005" blue="0.96459084750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="checkoutButtonPressed:" destination="RW1-Aq-keL" eventType="touchUpInside" id="Jh2-cP-5mH"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="fTE-fw-sdP" firstAttribute="leading" secondItem="Z4C-sC-l2M" secondAttribute="leading" id="0UJ-Bv-vsx"/>
+                            <constraint firstItem="fTE-fw-sdP" firstAttribute="centerY" secondItem="AaA-D8-wfz" secondAttribute="centerY" id="2ho-Pj-E4n"/>
+                            <constraint firstItem="Z4C-sC-l2M" firstAttribute="trailing" secondItem="fTE-fw-sdP" secondAttribute="trailing" id="h3x-Em-TI9"/>
+                            <constraint firstItem="fTE-fw-sdP" firstAttribute="centerX" secondItem="AaA-D8-wfz" secondAttribute="centerX" id="pR7-g6-ORL"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Z4C-sC-l2M"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Selection" id="AmK-ng-x6s">
+                        <barButtonItem key="rightBarButtonItem" title="Edit" id="2Qj-p5-lKa">
+                            <connections>
+                                <action selector="editButtonPressed:" destination="RW1-Aq-keL" id="90J-Ev-5D0"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="itemAuthor" destination="Lec-ez-fIf" id="OI1-6V-cOj"/>
+                        <outlet property="itemAvailable" destination="BFy-ya-LaE" id="NoK-ld-lkd"/>
+                        <outlet property="itemInformation" destination="LA5-gr-SkD" id="NbM-Vf-FbQ"/>
+                        <outlet property="itemName" destination="u2T-mE-Rbb" id="pdg-1m-6uj"/>
+                        <outlet property="itemType" destination="6Fj-08-q4b" id="T1r-4k-gQf"/>
+                        <segue destination="lpC-tF-LTf" kind="show" identifier="goToEdit" id="loi-Wt-Dxs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YWq-PI-Vms" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3695" y="-616"/>
+            <point key="canvasLocation" x="3920.8000000000002" y="-441.22938530734638"/>
         </scene>
         <!--Department Library-->
         <scene sceneID="oe7-HS-mt4">
@@ -328,7 +398,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hts-Hd-ish" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4146" y="133"/>
+            <point key="canvasLocation" x="5292" y="133"/>
         </scene>
         <!--Add Items-->
         <scene sceneID="Dz9-5F-wVu">
@@ -440,7 +510,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kna-gB-JRy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2591" y="1022"/>
+            <point key="canvasLocation" x="2591" y="1140"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="WNQ-AO-rXV">
@@ -465,6 +535,7 @@
         <image name="background" width="2880" height="5120"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="FAe-mb-EQl"/>
+        <segue reference="loi-Wt-Dxs"/>
+        <segue reference="iVu-N8-nUd"/>
     </inferredMetricsTieBreakers>
 </document>

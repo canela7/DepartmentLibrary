@@ -74,7 +74,8 @@ class DepartmentLibraryTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         self.performSegue(withIdentifier: "goToEdit", sender: self)
-        
+        //self.performSegue(withIdentifier: "goToCheckoutLog", sender: self)
+       
         
         tableView.deselectRow(at: indexPath, animated: true)
     }
@@ -84,6 +85,12 @@ class DepartmentLibraryTableViewController: UITableViewController {
             if let editDestination = segue.destination as? EditViewController {
                 if let index = tableView.indexPathForSelectedRow {
                     editDestination.delegateForEditController = libraryItemArray?[index.row]
+                }
+            }
+        }else if  segue.identifier == "goToCheckoutLog" {
+            if let editDestination = segue.destination as? ItemInformationViewController {
+                if let index = tableView.indexPathForSelectedRow {
+                    editDestination.delegateForItemInformationController = libraryItemArray?[index.row]
                 }
             }
         }
