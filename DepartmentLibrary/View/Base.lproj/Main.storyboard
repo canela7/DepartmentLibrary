@@ -81,22 +81,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1662.5" y="133.5"/>
-        </scene>
-        <!--Checkout Log-->
-        <scene sceneID="HXF-wk-a1o">
-            <objects>
-                <viewController title="Checkout Log" id="RW1-Aq-keL" customClass="CheckoutLogViewController" customModule="DepartmentLibrary" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="AaA-D8-wfz">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="Z4C-sC-l2M"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="YWq-PI-Vms" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3695" y="-616"/>
+            <point key="canvasLocation" x="1636" y="118"/>
         </scene>
         <!--Department Library-->
         <scene sceneID="oe7-HS-mt4">
@@ -209,7 +194,6 @@
                     </navigationItem>
                     <connections>
                         <outlet property="searchBar" destination="TOq-uI-ezh" id="K1v-s6-9Bp"/>
-                        <segue destination="RW1-Aq-keL" kind="show" identifier="goToCheckoutLog" id="Olx-1i-lym"/>
                         <segue destination="lpC-tF-LTf" kind="show" identifier="goToEdit" id="X05-Rx-8ph"/>
                     </connections>
                 </tableViewController>
@@ -300,6 +284,19 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Etw-v2-Sh6">
+                                <rect key="frame" x="128" y="612" width="118" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <inset key="contentEdgeInsets" minX="20" minY="10" maxX="20" maxY="10"/>
+                                <state key="normal" title="Checkout">
+                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="tbe-GE-A51" kind="show" identifier="goToCheckoutItem" id="G5s-ee-pgD"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -311,6 +308,11 @@
                         <viewLayoutGuide key="safeArea" id="edX-0O-gig"/>
                     </view>
                     <navigationItem key="navigationItem" title="Edit Item" id="ODO-4O-dm0">
+                        <barButtonItem key="leftBarButtonItem" title="Checkout Log" id="7Gz-ks-SUS">
+                            <connections>
+                                <segue destination="p0Y-YV-boJ" kind="show" identifier="goToCheckoutLog" id="dhg-Ah-gkE"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="YUI-qc-LIh">
                             <connections>
                                 <action selector="editDoneBarButtonPressed:" destination="lpC-tF-LTf" id="BgI-UA-Ulb"/>
@@ -328,7 +330,128 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hts-Hd-ish" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4146" y="133"/>
+            <point key="canvasLocation" x="2591" y="-951"/>
+        </scene>
+        <!--Checkout Log Table View Controller-->
+        <scene sceneID="nKA-Vs-TG2">
+            <objects>
+                <tableViewController id="p0Y-YV-boJ" customClass="CheckoutLogTableViewController" customModule="DepartmentLibrary" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="oL1-X8-4KF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="149" id="yLz-zQ-vSL">
+                                <rect key="frame" x="0.0" y="28" width="375" height="149"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yLz-zQ-vSL" id="Tt8-FR-Fct">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="148.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="p0Y-YV-boJ" id="Ngc-rT-HJ3"/>
+                            <outlet property="delegate" destination="p0Y-YV-boJ" id="Vz1-yJ-ywo"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EBm-Ya-R2L" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3213.5999999999999" y="-1774.3628185907048"/>
+        </scene>
+        <!--Checkout Item-->
+        <scene sceneID="8BF-wO-Le9">
+            <objects>
+                <viewController id="tbe-GE-A51" customClass="CheckoutViewController" customModule="DepartmentLibrary" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4l9-Kz-lQT">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="eKv-Sn-Pdu">
+                                <rect key="frame" x="0.0" y="138.5" width="375" height="390"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="WjH-JG-uee" userLabel="Left Stack View">
+                                        <rect key="frame" x="0.0" y="4" width="114" height="382"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Student Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GBh-vg-ZFC">
+                                                <rect key="frame" x="0.0" y="0.0" width="114" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CIN:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hz6-lp-Nbb">
+                                                <rect key="frame" x="0.0" y="120.5" width="114" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date Borrowed" textAlignment="natural" lineBreakMode="middleTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="k71-Q0-aFf">
+                                                <rect key="frame" x="0.0" y="241" width="114" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Due Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="cdq-mK-exQ">
+                                                <rect key="frame" x="0.0" y="361.5" width="114" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="90" translatesAutoresizingMaskIntoConstraints="NO" id="0d6-sq-Vcz" userLabel="Right Stack View">
+                                        <rect key="frame" x="114" y="0.0" width="261" height="390"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Name of Item" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GFD-aF-Oz1">
+                                                <rect key="frame" x="0.0" y="0.0" width="261" height="30"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Author of Item" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="but-aN-y5R">
+                                                <rect key="frame" x="0.0" y="120" width="261" height="30"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Information about the Item." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vN7-Fg-QCM">
+                                                <rect key="frame" x="0.0" y="240" width="261" height="30"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Select item Type" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eiz-SU-15j">
+                                                <rect key="frame" x="0.0" y="360" width="261" height="30"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="eKv-Sn-Pdu" firstAttribute="leading" secondItem="4l9-Kz-lQT" secondAttribute="leading" id="9Rg-r0-Fv5"/>
+                            <constraint firstItem="eKv-Sn-Pdu" firstAttribute="centerY" secondItem="4l9-Kz-lQT" secondAttribute="centerY" id="OCe-lE-IKE"/>
+                            <constraint firstItem="eKv-Sn-Pdu" firstAttribute="centerX" secondItem="4l9-Kz-lQT" secondAttribute="centerX" id="ub0-gV-jU2"/>
+                            <constraint firstAttribute="trailing" secondItem="eKv-Sn-Pdu" secondAttribute="trailing" id="wFF-Gu-4U8"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="EjI-PH-rIT"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Checkout Item" id="fjx-8C-cID">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="OsD-8G-05f">
+                            <connections>
+                                <segue destination="p0Y-YV-boJ" kind="show" identifier="goToCheckoutLog" id="zlk-Lf-ZG2"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dft-cS-E6E" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3825" y="-951"/>
         </scene>
         <!--Add Items-->
         <scene sceneID="Dz9-5F-wVu">
@@ -422,7 +545,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cai-na-DIQ"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="djL-Dj-nTc">
+                    <navigationItem key="navigationItem" title="Add Item" id="djL-Dj-nTc">
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="UaF-Qs-v9w">
                             <connections>
                                 <action selector="doneBarButtonPressed:" destination="6iv-dV-0af" id="Pby-uI-sVU"/>
@@ -465,6 +588,7 @@
         <image name="background" width="2880" height="5120"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="FAe-mb-EQl"/>
+        <segue reference="zlk-Lf-ZG2"/>
+        <segue reference="cX7-h4-Icg"/>
     </inferredMetricsTieBreakers>
 </document>
