@@ -448,6 +448,12 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="dateBorrowedTextField" destination="vN7-Fg-QCM" id="sYH-wC-dLJ"/>
+                        <outlet property="dueDateTextField" destination="eiz-SU-15j" id="TLY-ER-Evx"/>
+                        <outlet property="studentCinTextField" destination="but-aN-y5R" id="9VL-FQ-h8z"/>
+                        <outlet property="studentNameTextField" destination="GFD-aF-Oz1" id="fGF-va-ICo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dft-cS-E6E" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
