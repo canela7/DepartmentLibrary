@@ -38,8 +38,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         try! realm.write {
             realm.add(DepartmentLibrary(name: "Learn how to code in c++", authorName: "Brian Canela", additionalInformation: "This book is meant for new coders",type: "Book", available: false))
+            
             realm.add(DepartmentLibrary(name: "Cracking the Coding Book!", authorName: "John Smith", additionalInformation: "This pdf that will help you pass your coding interviews!.",type: "Tablet", available: true))
+            
             realm.add(DepartmentLibrary(name: "Java for Beginners!", authorName: "Ashley Benz", additionalInformation: "The java pdf for coders.",type: "Tablet", available: true))
+            
         }
     }
     

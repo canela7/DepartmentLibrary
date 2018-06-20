@@ -21,6 +21,7 @@ class DepartmentLibrary: Object {
     @objc dynamic var type: String = ""
     @objc dynamic var available: Bool = true
     
+//    let checkoutlog = List<CheckoutLogModel>()
     
     convenience init(name: String, authorName:String, additionalInformation: String, type: String, available: Bool){
         self.init()
@@ -30,6 +31,9 @@ class DepartmentLibrary: Object {
         self.type = type
         self.available = available
     }
+    
+    
+   
     
   
     

@@ -7,19 +7,21 @@
 //
 
 import Foundation
+import RealmSwift
 
 
 class CheckoutLogModel  {
     
-    var cin: Int
-    var studentName = ""
+     var studentName: String = ""
+     var cin: Int = 0
     var dateBorrowed: Date!
-    var dueDate: Date?
+     var dueCreated : Date?
+    
+//    var parentItem = LinkingObjects(fromType: DepartmentLibrary.self, property: "checkoutlog")
+//
     
     
-    init(cin: Int) {
-        self.cin = cin
-    }
+
     
     
     
