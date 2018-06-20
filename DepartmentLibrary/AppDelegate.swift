@@ -21,30 +21,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         print(Realm.Configuration.defaultConfiguration.fileURL!)
         
-        initializeRealm()
+     
         
-        do{
-            _ = try Realm()
-        }catch{
-            print("Error initalising new realm, \(error)")
-        }
+//        initializeRealm()
+//        
+//        do{
+//            _ = try Realm()
+//        }catch{
+//            print("Error initalising new realm, \(error)")
+//        }
         
         return true
     }
 
-    private func initializeRealm() {
-        let realm = try! Realm()
-        guard realm.isEmpty else { return }
-        
-        try! realm.write {
-            realm.add(DepartmentLibrary(name: "Learn how to code in c++", authorName: "Brian Canela", additionalInformation: "This book is meant for new coders",type: "Book", available: false))
-            
-            realm.add(DepartmentLibrary(name: "Cracking the Coding Book!", authorName: "John Smith", additionalInformation: "This pdf that will help you pass your coding interviews!.",type: "Tablet", available: true))
-            
-            realm.add(DepartmentLibrary(name: "Java for Beginners!", authorName: "Ashley Benz", additionalInformation: "The java pdf for coders.",type: "Tablet", available: true))
-            
-        }
-    }
+//    private func initializeRealm() {
+//        let realm = try! Realm()
+//        guard realm.isEmpty else { return }
+//
+//        try! realm.write {
+//            realm.add(DepartmentLibrary())
+//        }
+//    }
     
     
     func applicationWillResignActive(_ application: UIApplication) {

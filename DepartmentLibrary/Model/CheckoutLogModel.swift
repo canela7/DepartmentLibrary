@@ -10,17 +10,18 @@ import Foundation
 import RealmSwift
 
 
-class CheckoutLogModel  {
+class CheckoutLogModel: Object  {
     
-     var studentName: String = ""
-     var cin: Int = 0
-    var dateBorrowed: Date!
-     var dueCreated : Date?
+    @objc dynamic var studentName: String = ""
+    @objc dynamic  var cin: Int = 0
+    @objc dynamic  var dateBorrowed: Date!
+    @objc dynamic  var dueCreated : Date?
     
-//    var parentItem = LinkingObjects(fromType: DepartmentLibrary.self, property: "checkoutlog")
-//
+    var parentItem = LinkingObjects(fromType: DepartmentLibrary.self, property: "checkoutlog")
+
     
-    //THIS IS FOR USER CHECKOUT TEEST
+    //THIS IS FOR USER CHECKOUT TEEST, testing new one!
+    //this is usercheckout branch
     
 
     
