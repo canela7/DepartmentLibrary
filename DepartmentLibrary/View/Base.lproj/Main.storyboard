@@ -415,12 +415,12 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Information about the Item." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vN7-Fg-QCM">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Today's Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gqP-59-ANp">
                                                 <rect key="frame" x="0.0" y="240" width="261" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Select item Type" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eiz-SU-15j">
                                                 <rect key="frame" x="0.0" y="360" width="261" height="30"/>
                                                 <nil key="textColor"/>
@@ -449,7 +449,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="dateBorrowedTextField" destination="vN7-Fg-QCM" id="sYH-wC-dLJ"/>
+                        <outlet property="dateBorrowedLabel" destination="gqP-59-ANp" id="g0P-np-PXx"/>
                         <outlet property="dueDateTextField" destination="eiz-SU-15j" id="TLY-ER-Evx"/>
                         <outlet property="studentCinTextField" destination="but-aN-y5R" id="9VL-FQ-h8z"/>
                         <outlet property="studentNameTextField" destination="GFD-aF-Oz1" id="fGF-va-ICo"/>
