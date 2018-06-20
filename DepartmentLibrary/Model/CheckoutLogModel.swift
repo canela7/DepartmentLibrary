@@ -20,6 +20,7 @@ class CheckoutLogModel  {
 //    var parentItem = LinkingObjects(fromType: DepartmentLibrary.self, property: "checkoutlog")
 //
     
+    //THIS IS FOR USER CHECKOUT TEEST
     
 
     
