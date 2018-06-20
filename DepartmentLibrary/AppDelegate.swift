@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         print(Realm.Configuration.defaultConfiguration.fileURL!)
         
-     
+//        let config = Realm.Configuration(fileURL: Realm.Configuration.defaultConfiguration.fileURL!, deleteRealmIfMigrationNeeded: true)
         
 //        initializeRealm()
 //        
