@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class CheckoutViewController: UIViewController, UITextFieldDelegate {
 
@@ -27,10 +28,18 @@ class CheckoutViewController: UIViewController, UITextFieldDelegate {
     let formatter = DateFormatter()
     
     
+     let realm = try! Realm()
+    
+    var selectedItem: DepartmentLibrary?
+    
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         createDatePicker()
+        
+        
         formatter.dateStyle = .medium
         formatter.timeStyle = .none
         let dateString = formatter.string(from: datepicker.date)
@@ -68,9 +77,40 @@ class CheckoutViewController: UIViewController, UITextFieldDelegate {
         guard let dateBorrowed = dateBorrowedLabel.text else {return print("Required information")}
         guard let dueDate = dueDateTextField.text else {fatalError("required due date return book")}
         
-        
+        formatter.dateStyle = .medium
+        formatter.timeStyle = .none
+        let dateBorrow = formatter.date(from: dateBorrowed)
+        let dueDateItem = formatter.date(from: dueDate)
+
          print(studentName, cin, dateBorrowed, dueDate);
-     
+        
+//        if let currentItemList = self.selectedItem {
+//            let newItem = CheckoutLogModel()
+//
+//            newItem.studentName = studentName
+//            newItem.cin = Int(cin)!
+//            newItem.dateBorrowed = dateBorrow
+//            newItem.dueCreated = dueDateItem
+//
+//        }
+        
+        do{
+            try realm.write {
+                if let currentItemList = self.selectedItem {
+                    let newItem = CheckoutLogModel()
+                    
+                    newItem.studentName = studentName
+                    newItem.cin = Int(cin)!
+                    newItem.dateBorrowed = dateBorrow
+                    newItem.dueCreated = dueDateItem
+                    currentItemList.checkoutlog.append(newItem)
+                }
+                
+//                realm.add(newItem)
+            }
+        }catch{
+            print("Error saving context \(error)")
+        }
         
         
         

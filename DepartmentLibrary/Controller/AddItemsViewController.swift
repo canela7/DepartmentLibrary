@@ -97,11 +97,10 @@ class AddItemsViewController: UIViewController, UITextFieldDelegate {
         newItem.available = true
         
         do{
-//            let realm = try! Realm()
+
             try realm.write {
                 realm.add(newItem)
               }
-            
         }catch{
             print("Error saving context \(error)")
         }
