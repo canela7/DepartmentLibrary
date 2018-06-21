@@ -17,7 +17,7 @@ class CheckoutLogModel: Object  {
     @objc dynamic  var dateBorrowed: Date!
     @objc dynamic  var dueCreated : Date?
     
-    //var parentItem = LinkingObjects(fromType: DepartmentLibrary.self, property: "checkoutlog")
+    var parentItem = LinkingObjects(fromType: DepartmentLibrary.self, property: "checkoutlog")
 
     
     //THIS IS FOR USER CHECKOUT TEEST, testing new one!

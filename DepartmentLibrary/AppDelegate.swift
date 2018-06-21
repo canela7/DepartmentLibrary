@@ -19,29 +19,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
+        initializeRealm()
+        
+        do{
+            _ = try Realm()
+        }catch{
+            print("Error initalising new realm, \(error)")
+        }
+        
+        
         print(Realm.Configuration.defaultConfiguration.fileURL!)
         
-//        let config = Realm.Configuration(fileURL: Realm.Configuration.defaultConfiguration.fileURL!, deleteRealmIfMigrationNeeded: true)
-        
-//        initializeRealm()
-//        
-//        do{
-//            _ = try Realm()
-//        }catch{
-//            print("Error initalising new realm, \(error)")
-//        }
         
         return true
     }
 
-//    private func initializeRealm() {
-//        let realm = try! Realm()
-//        guard realm.isEmpty else { return }
-//
-//        try! realm.write {
-//            realm.add(DepartmentLibrary())
-//        }
-//    }
+    private func initializeRealm() {
+        
+        let config = Realm.Configuration(fileURL: Realm.Configuration.defaultConfiguration.fileURL!, deleteRealmIfMigrationNeeded: true)
+        
+        let realm = try! Realm(configuration: config)
+        guard realm.isEmpty else { return }
+
+        try! realm.write {
+            realm.add(DepartmentLibrary())
+        }
+    }
     
     
     func applicationWillResignActive(_ application: UIApplication) {
