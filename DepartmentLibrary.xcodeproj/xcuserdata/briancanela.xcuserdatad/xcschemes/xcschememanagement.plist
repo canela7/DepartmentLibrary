@@ -9,6 +9,19 @@
 			<key>orderHint</key>
 			<integer>3</integer>
 		</dict>
+		<key>DepartmentLibrary2.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>4</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>DA2D8E3620D06B9D00B6529D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 	</dict>
 </dict>
 </plist>

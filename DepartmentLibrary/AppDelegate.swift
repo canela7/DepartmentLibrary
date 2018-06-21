@@ -21,27 +21,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         print(Realm.Configuration.defaultConfiguration.fileURL!)
         
-//        let config = Realm.Configuration(fileURL: Realm.Configuration.defaultConfiguration.fileURL!, deleteRealmIfMigrationNeeded: true)
+        let config = Realm.Configuration(fileURL: Realm.Configuration.defaultConfiguration.fileURL!, deleteRealmIfMigrationNeeded: true)
         
-//        initializeRealm()
-//        
-//        do{
-//            _ = try Realm()
-//        }catch{
-//            print("Error initalising new realm, \(error)")
-//        }
+        initializeRealm()
+        
+        do{
+            _ = try Realm()
+        }catch{
+            print("Error initalising new realm, \(error)")
+        }
         
         return true
     }
 
-//    private func initializeRealm() {
-//        let realm = try! Realm()
-//        guard realm.isEmpty else { return }
-//
-//        try! realm.write {
-//            realm.add(DepartmentLibrary())
-//        }
-//    }
+    private func initializeRealm() {
+        let realm = try! Realm()
+        guard realm.isEmpty else { return }
+
+        try! realm.write {
+            realm.add(DepartmentLibrary())
+        }
+    }
     
     
     func applicationWillResignActive(_ application: UIApplication) {
