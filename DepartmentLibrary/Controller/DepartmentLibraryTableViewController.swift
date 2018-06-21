@@ -28,6 +28,9 @@ class DepartmentLibraryTableViewController: UITableViewController {
     
     @IBOutlet weak var searchBar: UISearchBar!
     
+    let realm = try! Realm()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -95,7 +98,7 @@ class DepartmentLibraryTableViewController: UITableViewController {
     //MARK: Data Manipulation Methods
     func save(library: DepartmentLibrary){
         do{
-            let realm = try! Realm()
+//            let realm = try! Realm()
             try realm.write {
                 realm.add(library)
             }
@@ -108,7 +111,7 @@ class DepartmentLibraryTableViewController: UITableViewController {
     
     //get the items from database
     func loadItems() {
-        let realm = try! Realm()
+//        let realm = try! Realm()
         libraryItemArray = realm.objects(DepartmentLibrary.self).sorted(byKeyPath: "available", ascending: false)
         
         self.tableView.reloadData()
@@ -131,7 +134,7 @@ extension DepartmentLibraryTableViewController {
         
         if let itemForDeletion = libraryItemArray?[indexPath.row] {
             do{
-                let realm = try! Realm()
+//                let realm = try! Realm()
                 try realm.write {
                     realm.delete(itemForDeletion)
                 }

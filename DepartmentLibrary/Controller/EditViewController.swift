@@ -32,6 +32,8 @@ class EditViewController: UIViewController, UITextFieldDelegate {
     let itemPickerViewTypes = ["Book", "Tablet"]
     var pickerView = UIPickerView()
     
+     let realm = try! Realm()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -100,7 +102,7 @@ class EditViewController: UIViewController, UITextFieldDelegate {
 
         if let editItem = delegateForEditController {
             do{
-                let realm = try! Realm()
+//                let realm = try! Realm()
                 try realm.write {
                     editItem.name = nameTextfield
                     editItem.authorName = authorTextfield

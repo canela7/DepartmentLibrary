@@ -29,6 +29,7 @@ class AddItemsViewController: UIViewController, UITextFieldDelegate {
     //to store the data and send it to homepage
     var addedItemsToDepartmentLibrary: DepartmentLibrary?
     
+    let realm = try! Realm()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -96,7 +97,7 @@ class AddItemsViewController: UIViewController, UITextFieldDelegate {
         newItem.available = true
         
         do{
-            let realm = try! Realm()
+//            let realm = try! Realm()
             try realm.write {
                 realm.add(newItem)
               }
