@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CheckoutViewController: UIViewController {
+class CheckoutViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var studentNameTextField: UITextField!
     
@@ -42,6 +42,45 @@ class CheckoutViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
+    //MARK: TextField Methods
+    override open func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    
+    public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == studentNameTextField {
+            studentCinTextField.becomeFirstResponder()
+        }else if textField == studentCinTextField {
+            dueDateTextField.becomeFirstResponder()
+        }else if textField == dueDateTextField {
+              textField.resignFirstResponder()
+        }
+        return true
+    }
+    
+    
+    @IBAction func doneBarButtonPressed(_ sender: Any) {
+        guard let studentName = studentNameTextField.text else {return}
+        guard let cin  = studentCinTextField.text else {fatalError("required student cin name")}
+        guard let dateBorrowed = dateBorrowedLabel.text else {return print("Required information")}
+        guard let dueDate = dueDateTextField.text else {fatalError("required due date return book")}
+        
+        
+         print(studentName, cin, dateBorrowed, dueDate);
+     
+        
+        
+        
+    }
+    
+    
+    
+    
+    
+    
     
 
 

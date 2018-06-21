@@ -30,7 +30,6 @@ class DepartmentLibraryTableViewController: UITableViewController {
     
     let realm = try! Realm()
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 

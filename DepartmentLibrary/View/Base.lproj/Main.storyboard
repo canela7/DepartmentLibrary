@@ -408,12 +408,18 @@
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="tbe-GE-A51" id="KDg-4r-buh"/>
+                                                </connections>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Author of Item" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="but-aN-y5R">
                                                 <rect key="frame" x="0.0" y="120" width="261" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="tbe-GE-A51" id="O2S-HO-0fe"/>
+                                                </connections>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Today's Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gqP-59-ANp">
                                                 <rect key="frame" x="0.0" y="240" width="261" height="30"/>
@@ -426,6 +432,9 @@
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="tbe-GE-A51" id="wos-Tp-7gO"/>
+                                                </connections>
                                             </textField>
                                         </subviews>
                                     </stackView>
@@ -444,7 +453,7 @@
                     <navigationItem key="navigationItem" title="Checkout Item" id="fjx-8C-cID">
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="OsD-8G-05f">
                             <connections>
-                                <segue destination="p0Y-YV-boJ" kind="show" identifier="goToCheckoutLog" id="zlk-Lf-ZG2"/>
+                                <action selector="doneBarButtonPressed:" destination="tbe-GE-A51" id="1EX-Yb-1Ig"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -453,6 +462,7 @@
                         <outlet property="dueDateTextField" destination="eiz-SU-15j" id="TLY-ER-Evx"/>
                         <outlet property="studentCinTextField" destination="but-aN-y5R" id="9VL-FQ-h8z"/>
                         <outlet property="studentNameTextField" destination="GFD-aF-Oz1" id="fGF-va-ICo"/>
+                        <segue destination="p0Y-YV-boJ" kind="show" identifier="goToCheckoutLog" id="6yE-Sv-caA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dft-cS-E6E" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -594,7 +604,7 @@
         <image name="background" width="2880" height="5120"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="zlk-Lf-ZG2"/>
+        <segue reference="6yE-Sv-caA"/>
         <segue reference="iVu-N8-nUd"/>
     </inferredMetricsTieBreakers>
 </document>
