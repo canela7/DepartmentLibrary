@@ -14,6 +14,9 @@ class CheckoutLogTableViewController: UITableViewController {
     var libaryItemArray: Results<DepartmentLibrary>?
     
     var checkoutItemArray: Results<CheckoutLogModel>?
+    
+    
+    
     let realm = try! Realm()
 
 
@@ -46,18 +49,32 @@ class CheckoutLogTableViewController: UITableViewController {
         // Return false if you do not want the specified item to be editable.
         return true
     }
+    
+    //MARK: Data Manipulation Methods
+    func save(library: DepartmentLibrary){
+        do{
+            //            let realm = try! Realm()
+            try realm.write {
+                realm.add(library)
+            }
+        }catch{
+            print("Error saving context \(error)")
+        }
+        
+        self.tableView.reloadData()
+    }
+    
+    //get the items from database
+    func loadItems() {
+        //        let realm = try! Realm()
+        checkoutItemArray = realm.objects(CheckoutLogModel.self).sorted(byKeyPath: "dateBorrowed", ascending: false)
+        
+        self.tableView.reloadData()
+    }
  
 
    
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
+ 
  
 
     

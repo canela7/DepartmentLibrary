@@ -294,7 +294,7 @@
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="tbe-GE-A51" kind="show" identifier="goToCheckoutItem" id="G5s-ee-pgD"/>
+                                    <action selector="checkoutButtonPressed:" destination="lpC-tF-LTf" eventType="touchUpInside" id="WuF-37-2tM"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -326,6 +326,7 @@
                         <outlet property="editNameTextField" destination="T9q-8e-sBL" id="6WL-Pr-6jg"/>
                         <outlet property="editSelectedType" destination="SiL-Lt-6k0" id="2fo-32-DX9"/>
                         <segue destination="akU-TK-hcg" kind="show" identifier="goToDepartmentLibrayFromEdit" id="cX7-h4-Icg"/>
+                        <segue destination="tbe-GE-A51" kind="show" identifier="goToCheckoutItem" id="gL3-w3-6g5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hts-Hd-ish" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -604,7 +605,7 @@
         <image name="background" width="2880" height="5120"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="6yE-Sv-caA"/>
-        <segue reference="iVu-N8-nUd"/>
+        <segue reference="dhg-Ah-gkE"/>
+        <segue reference="cX7-h4-Icg"/>
     </inferredMetricsTieBreakers>
 </document>

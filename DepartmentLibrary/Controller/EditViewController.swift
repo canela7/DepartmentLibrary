@@ -118,6 +118,25 @@ class EditViewController: UIViewController, UITextFieldDelegate {
         
         print("Triggered!")
     }
+    
+    @IBAction func checkoutButtonPressed(_ sender: Any) {
+        performSegue(withIdentifier: "goToCheckoutItem", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToCheckoutItem" {
+            if let destination = segue.destination as? CheckoutViewController  {
+               destination.delegateForCheckout = delegateForEditController
+            }
+        }
+    }
+    
+    
+    
+    
+    
+    
+    
 }
 
 

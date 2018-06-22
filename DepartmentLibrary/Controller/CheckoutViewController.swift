@@ -30,7 +30,9 @@ class CheckoutViewController: UIViewController, UITextFieldDelegate {
     
      let realm = try! Realm()
     
-    var selectedItem: DepartmentLibrary?
+    //var selectedItem: DepartmentLibrary?
+    
+    var delegateForCheckout: DepartmentLibrary?
     
 
     
@@ -96,7 +98,7 @@ class CheckoutViewController: UIViewController, UITextFieldDelegate {
         
         do{
             try realm.write {
-                if let currentItemList = self.selectedItem {
+                if let currentItemList = self.delegateForCheckout {
                     let newItem = CheckoutLogModel()
                     
                     newItem.studentName = studentName
