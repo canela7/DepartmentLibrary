@@ -342,30 +342,30 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="checkoutLogCell" rowHeight="239" id="yLz-zQ-vSL">
-                                <rect key="frame" x="0.0" y="28" width="375" height="239"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="checkoutLogCell" rowHeight="155" id="yLz-zQ-vSL" customClass="CheckoutCustomCell" customModule="DepartmentLibrary" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="155"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yLz-zQ-vSL" id="Tt8-FR-Fct">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="238.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="154.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="61n-zM-fXq">
-                                            <rect key="frame" x="0.0" y="8" width="375" height="222"/>
+                                            <rect key="frame" x="0.0" y="8" width="375" height="138"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Student Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K4r-JV-RTa">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="60.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="33"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Due Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1A5-Mb-YAb">
-                                                    <rect key="frame" x="0.0" y="80.5" width="375" height="61"/>
+                                                    <rect key="frame" x="0.0" y="53" width="375" height="32.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date Returned" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IRb-sH-Xft">
-                                                    <rect key="frame" x="0.0" y="161.5" width="375" height="60.5"/>
+                                                    <rect key="frame" x="0.0" y="105.5" width="375" height="33"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -380,6 +380,11 @@
                                         <constraint firstAttribute="trailing" secondItem="61n-zM-fXq" secondAttribute="trailing" id="p8E-hy-KEr"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="dateReturnedLabel" destination="IRb-sH-Xft" id="glL-AZ-D1n"/>
+                                    <outlet property="dueDateLabel" destination="1A5-Mb-YAb" id="m7P-En-Zro"/>
+                                    <outlet property="studentNameLabel" destination="K4r-JV-RTa" id="cZE-yX-wmC"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -636,6 +641,7 @@
         <image name="background" width="2880" height="5120"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="X05-Rx-8ph"/>
         <segue reference="dhg-Ah-gkE"/>
         <segue reference="cX7-h4-Icg"/>
     </inferredMetricsTieBreakers>

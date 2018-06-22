@@ -9,6 +9,18 @@
 import UIKit
 import RealmSwift
 
+
+class CheckoutCustomCell: UITableViewCell {
+
+    @IBOutlet weak var studentNameLabel: UILabel!
+    @IBOutlet weak var dueDateLabel: UILabel!
+    @IBOutlet weak var dateReturnedLabel: UILabel!
+    
+}
+
+
+
+
 class CheckoutLogTableViewController: UITableViewController {
     
     var libaryItemArray: Results<DepartmentLibrary>?
@@ -23,6 +35,7 @@ class CheckoutLogTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        loadItems()
 
     }
 
@@ -35,28 +48,27 @@ class CheckoutLogTableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "checkoutLogCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "checkoutLogCell", for: indexPath) as! CheckoutCustomCell
         
-//        if let item = checkoutItemArray?[indexPath.row] {
-//            cell.itemName.text = item.name
-//            cell.itemType.text = item.type
-//            
-//            if item.available {
-//                cell.isAvailable.text = "Yes"
-//            }else {
-//                cell.isAvailable.text = "No"
-//            }
-//            
-//        }else {
-//            cell.itemName.text = "no item name"
-//            cell.itemType.text = "no item type"
-//            cell.isAvailable.text = "N/A"
-//        }
+        if let item = checkoutItemArray?[indexPath.row] {
+            guard let dueDate = item.dueCreated else {fatalError("required item name ")}
+            
+            cell.studentNameLabel.text = "Student Name: \(item.studentName)"
+            cell.dueDateLabel.text = "Item Due Date \(dueDate)"
+            cell.dateReturnedLabel.text = "Item Returned  \(String(describing: item.dateReturned))"
+        }else {
+            cell.studentNameLabel.text = "no item name"
+            cell.dueDateLabel.text = "no item type"
+            cell.dateReturnedLabel.text = "N/A"
+        }
     
 
         return cell
     }
  
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
 
    
     // Override to support conditional editing of the table view.
