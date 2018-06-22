@@ -353,19 +353,19 @@
                                             <rect key="frame" x="0.0" y="8" width="375" height="138"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Student Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K4r-JV-RTa">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="33"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="32.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Due Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1A5-Mb-YAb">
-                                                    <rect key="frame" x="0.0" y="53" width="375" height="32.5"/>
+                                                    <rect key="frame" x="0.0" y="52.5" width="375" height="33"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date Returned" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IRb-sH-Xft">
-                                                    <rect key="frame" x="0.0" y="105.5" width="375" height="33"/>
+                                                    <rect key="frame" x="0.0" y="105.5" width="375" height="32.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -641,8 +641,7 @@
         <image name="background" width="2880" height="5120"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="X05-Rx-8ph"/>
         <segue reference="dhg-Ah-gkE"/>
-        <segue reference="cX7-h4-Icg"/>
+        <segue reference="iVu-N8-nUd"/>
     </inferredMetricsTieBreakers>
 </document>

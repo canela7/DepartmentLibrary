@@ -27,6 +27,7 @@ class CheckoutLogTableViewController: UITableViewController {
     
     var checkoutItemArray: Results<CheckoutLogModel>?
     
+    var delegateForCheckoutTable: DepartmentLibrary?
     
     
     let realm = try! Realm()
@@ -52,7 +53,7 @@ class CheckoutLogTableViewController: UITableViewController {
         
         if let item = checkoutItemArray?[indexPath.row] {
             guard let dueDate = item.dueCreated else {fatalError("required item name ")}
-            
+         
             cell.studentNameLabel.text = "Student Name: \(item.studentName)"
             cell.dueDateLabel.text = "Item Due Date \(dueDate)"
             cell.dateReturnedLabel.text = "Item Returned  \(String(describing: item.dateReturned))"
@@ -95,9 +96,7 @@ class CheckoutLogTableViewController: UITableViewController {
     
     //get the items from database
     func loadItems() {
-        //        let realm = try! Realm()
-        checkoutItemArray = realm.objects(CheckoutLogModel.self).sorted(byKeyPath: "dateBorrowed", ascending: false)
-        
+        checkoutItemArray = delegateForCheckoutTable?.checkoutlog.sorted(byKeyPath: "dateBorrowed")
         self.tableView.reloadData()
     }
  

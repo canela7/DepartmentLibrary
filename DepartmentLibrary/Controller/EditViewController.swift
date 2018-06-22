@@ -127,6 +127,10 @@ class EditViewController: UIViewController, UITextFieldDelegate {
             if let destination = segue.destination as? CheckoutViewController  {
                destination.delegateForCheckout = delegateForEditController
             }
+        }else if segue.identifier == "goToCheckoutLog" {
+            if let destinationForCheckoutTable = segue.destination as? CheckoutLogTableViewController  {
+                destinationForCheckoutTable.delegateForCheckoutTable = delegateForEditController
+            }
         }
     }
     
