@@ -18,9 +18,6 @@ class CheckoutCustomCell: UITableViewCell {
     
 }
 
-
-
-
 class CheckoutLogTableViewController: UITableViewController {
     
     var libaryItemArray: Results<DepartmentLibrary>?
@@ -52,11 +49,21 @@ class CheckoutLogTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "checkoutLogCell", for: indexPath) as! CheckoutCustomCell
         
         if let item = checkoutItemArray?[indexPath.row] {
-            guard let dueDate = item.dueCreated else {fatalError("required item name ")}
-         
+            
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateStyle = .medium
+            dateFormatter.timeStyle = .none
+            guard let dueDatee = item.dueCreated else {fatalError("required item name ")}
+            let dueDate = dateFormatter.string(from: dueDatee)
+            
             cell.studentNameLabel.text = "Student Name: \(item.studentName)"
             cell.dueDateLabel.text = "Item Due Date \(dueDate)"
-            cell.dateReturnedLabel.text = "Item Returned  \(String(describing: item.dateReturned))"
+            
+            if let dateReturned = item.dateReturned {
+                cell.dateReturnedLabel.text = "Item Returned  \(dateReturned))"
+            }else {
+                cell.dateReturnedLabel.text = "Item not yet Returned"
+            }
         }else {
             cell.studentNameLabel.text = "no item name"
             cell.dueDateLabel.text = "no item type"
@@ -83,7 +90,6 @@ class CheckoutLogTableViewController: UITableViewController {
     //MARK: Data Manipulation Methods
     func save(library: CheckoutLogModel){
         do{
-            //            let realm = try! Realm()
             try realm.write {
                 realm.add(library)
             }
