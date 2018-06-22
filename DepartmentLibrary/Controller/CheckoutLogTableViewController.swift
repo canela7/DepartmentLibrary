@@ -36,7 +36,22 @@ class CheckoutLogTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "checkoutLogCell", for: indexPath)
-
+        
+//        if let item = checkoutItemArray?[indexPath.row] {
+//            cell.itemName.text = item.name
+//            cell.itemType.text = item.type
+//            
+//            if item.available {
+//                cell.isAvailable.text = "Yes"
+//            }else {
+//                cell.isAvailable.text = "No"
+//            }
+//            
+//        }else {
+//            cell.itemName.text = "no item name"
+//            cell.itemType.text = "no item type"
+//            cell.isAvailable.text = "N/A"
+//        }
     
 
         return cell
@@ -50,8 +65,10 @@ class CheckoutLogTableViewController: UITableViewController {
         return true
     }
     
+    
+    
     //MARK: Data Manipulation Methods
-    func save(library: DepartmentLibrary){
+    func save(library: CheckoutLogModel){
         do{
             //            let realm = try! Realm()
             try realm.write {

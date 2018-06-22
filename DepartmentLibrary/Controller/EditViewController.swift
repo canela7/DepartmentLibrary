@@ -102,7 +102,6 @@ class EditViewController: UIViewController, UITextFieldDelegate {
 
         if let editItem = delegateForEditController {
             do{
-//                let realm = try! Realm()
                 try realm.write {
                     editItem.name = nameTextfield
                     editItem.authorName = authorTextfield

@@ -12,12 +12,8 @@ import RealmSwift
 class CheckoutViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var studentNameTextField: UITextField!
-    
     @IBOutlet weak var studentCinTextField: UITextField!
-    
-    
     @IBOutlet weak var dateBorrowedLabel: UILabel!
-    
     @IBOutlet weak var dueDateTextField: UITextField!
     
    
@@ -86,16 +82,6 @@ class CheckoutViewController: UIViewController, UITextFieldDelegate {
 
          print(studentName, cin, dateBorrowed, dueDate);
         
-//        if let currentItemList = self.selectedItem {
-//            let newItem = CheckoutLogModel()
-//
-//            newItem.studentName = studentName
-//            newItem.cin = Int(cin)!
-//            newItem.dateBorrowed = dateBorrow
-//            newItem.dueCreated = dueDateItem
-//
-//        }
-        
         do{
             try realm.write {
                 if let currentItemList = self.delegateForCheckout {
@@ -107,8 +93,6 @@ class CheckoutViewController: UIViewController, UITextFieldDelegate {
                     newItem.dueCreated = dueDateItem
                     currentItemList.checkoutlog.append(newItem)
                 }
-                
-//                realm.add(newItem)
             }
         }catch{
             print("Error saving context \(error)")
