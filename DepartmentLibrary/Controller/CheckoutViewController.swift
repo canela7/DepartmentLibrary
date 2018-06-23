@@ -36,11 +36,8 @@ class CheckoutViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         
         createDatePicker()
-        
-        
-        formatter.dateStyle = .medium
-        formatter.timeStyle = .none
-        let dateString = formatter.string(from: datepicker.date)
+
+        let dateString = dateFormatter(with: datepicker.date)
         dateBorrowedLabel.text = dateString
 
     }
@@ -75,10 +72,8 @@ class CheckoutViewController: UIViewController, UITextFieldDelegate {
         guard let dateBorrowed = dateBorrowedLabel.text else {return print("Required information")}
         guard let dueDate = dueDateTextField.text else {fatalError("required due date return book")}
         
-        formatter.dateStyle = .medium
-        formatter.timeStyle = .none
-        let dateBorrow = formatter.date(from: dateBorrowed)
-        let dueDateItem = formatter.date(from: dueDate)
+        let dateBorrow = dateFormatterFromStringToDate(with: dateBorrowed)
+        let dueDateItem = dateFormatterFromStringToDate(with: dueDate)
 
          print(studentName, cin, dateBorrowed, dueDate);
         
@@ -86,7 +81,6 @@ class CheckoutViewController: UIViewController, UITextFieldDelegate {
             try realm.write {
                 if let currentItemList = self.delegateForCheckout {
                     let newItem = CheckoutLogModel()
-                    
                     newItem.studentName = studentName
                     newItem.cin = Int(cin)!
                     newItem.dateBorrowed = dateBorrow
@@ -131,15 +125,37 @@ extension CheckoutViewController {
         dueDatePicker.datePickerMode = .date
     }
     
-    
+    //when u press done button in the toolbar of the due date picker
     @objc func donePressedDueDate(){
-        //format date
-        let formatter = DateFormatter()
-        formatter.dateStyle = .medium
-        formatter.timeStyle = .none
-        let dateString = formatter.string(from: dueDatePicker.date)
         
-        dueDateTextField.text = "\(dateString)"
+        let dateStringer  = dateFormatter(with: dueDatePicker.date)
+        
+        dueDateTextField.text = "\(dateStringer)"
         self.view.endEditing(true)
     }
+    
+    //date formate from date to string
+        func dateFormatter(with dateString: Date) -> String {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateStyle = .medium
+            dateFormatter.timeStyle = .none
+            let date = dateFormatter.string(from: dateString)
+            return date
+        
+        }
+    
+    
+    func dateFormatterFromStringToDate(with dateString: String) -> Date {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .medium
+        dateFormatter.timeStyle = .none
+        let date = dateFormatter.date(from: dateString)
+        return date!
+        
+    }
+        
+        
+        
+        
+  
 }

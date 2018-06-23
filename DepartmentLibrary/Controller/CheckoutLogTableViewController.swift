@@ -53,17 +53,24 @@ class CheckoutLogTableViewController: UITableViewController {
             let dateFormatter = DateFormatter()
             dateFormatter.dateStyle = .medium
             dateFormatter.timeStyle = .none
-            guard let dueDatee = item.dueCreated else {fatalError("required item name ")}
-            let dueDate = dateFormatter.string(from: dueDatee)
             
             cell.studentNameLabel.text = "Student Name: \(item.studentName)"
-            cell.dueDateLabel.text = "Item Due Date \(dueDate)"
+            
+            
+            if let dueDatee = item.dueCreated {
+                let dueDate = dateFormatter.string(from: dueDatee)
+
+                cell.dueDateLabel.text = "Item Due Date \(dueDate)"
+            }else {
+                cell.dueDateLabel.text = "No Due Date for this Item"
+            }
             
             if let dateReturned = item.dateReturned {
                 cell.dateReturnedLabel.text = "Item Returned  \(dateReturned))"
             }else {
                 cell.dateReturnedLabel.text = "Item not yet Returned"
             }
+            
         }else {
             cell.studentNameLabel.text = "no item name"
             cell.dueDateLabel.text = "no item type"
@@ -105,12 +112,5 @@ class CheckoutLogTableViewController: UITableViewController {
         checkoutItemArray = delegateForCheckoutTable?.checkoutlog.sorted(byKeyPath: "dateBorrowed")
         self.tableView.reloadData()
     }
- 
-
-   
- 
- 
-
-    
 
 }
