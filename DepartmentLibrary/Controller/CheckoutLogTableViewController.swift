@@ -83,21 +83,24 @@ class CheckoutLogTableViewController: UITableViewController {
  
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-    }
-    
-    
-    //MARK: Data Manipulation Methods
-    func save(library: CheckoutLogModel){
-        do{
-            try realm.write {
-                realm.add(library)
-            }
-        }catch{
-            print("Error saving context \(error)")
-        }
         
-        self.tableView.reloadData()
+        performSegue(withIdentifier: "goToReturnView", sender: self)
     }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToReturnView" {
+            if let returnDestination = segue.destination as? ReturnItemViewController {
+                
+                returnDestination.delegateDepartmentLibraryData = delegateForCheckoutTable
+                
+                if let index = tableView.indexPathForSelectedRow {
+                    returnDestination.delegateCheckoutData = checkoutItemArray?[index.row]
+                }
+            }
+        }
+    }
+
     
     //get the items from database
     func loadItems() {
