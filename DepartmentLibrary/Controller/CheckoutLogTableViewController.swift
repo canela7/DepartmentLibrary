@@ -84,14 +84,6 @@ class CheckoutLogTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
-
-   
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    
     
     
     //MARK: Data Manipulation Methods
@@ -114,3 +106,31 @@ class CheckoutLogTableViewController: UITableViewController {
     }
 
 }
+
+
+
+// MARK: - Table View Delegate //DELETE ITEM FROM REALM.!
+extension CheckoutLogTableViewController {
+    
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        
+        if let itemForDeletion = checkoutItemArray?[indexPath.row] {
+            do{
+                try realm.write {
+                    realm.delete(itemForDeletion)
+                }
+            }catch{
+                print("Error deleting category \(error)")
+            }
+        }
+        
+        tableView.deleteRows(at: [indexPath], with: .fade)
+    }
+    
+    
+}
+
