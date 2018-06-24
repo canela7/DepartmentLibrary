@@ -500,6 +500,7 @@
                         <outlet property="studentCinTextField" destination="but-aN-y5R" id="9VL-FQ-h8z"/>
                         <outlet property="studentNameTextField" destination="GFD-aF-Oz1" id="fGF-va-ICo"/>
                         <segue destination="p0Y-YV-boJ" kind="show" identifier="goToCheckoutLog" id="6yE-Sv-caA"/>
+                        <segue destination="akU-TK-hcg" kind="show" identifier="goToDepartmentLibaray" id="l45-RT-N8p"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dft-cS-E6E" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -634,14 +635,14 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HsL-24-4rV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="788" y="133"/>
+            <point key="canvasLocation" x="665" y="117"/>
         </scene>
     </scenes>
     <resources>
         <image name="background" width="2880" height="5120"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="dhg-Ah-gkE"/>
-        <segue reference="iVu-N8-nUd"/>
+        <segue reference="6yE-Sv-caA"/>
+        <segue reference="l45-RT-N8p"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -92,7 +92,7 @@ class CheckoutViewController: UIViewController, UITextFieldDelegate {
             print("Error saving context \(error)")
         }
         
-        
+        performSegue(withIdentifier: "goToDepartmentLibaray", sender: self)
         
     }
     
