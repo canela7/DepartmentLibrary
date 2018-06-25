@@ -82,9 +82,8 @@ class CheckoutLogTableViewController: UITableViewController {
     }
  
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-        
         performSegue(withIdentifier: "goToReturnView", sender: self)
+        
     }
     
     
@@ -93,13 +92,41 @@ class CheckoutLogTableViewController: UITableViewController {
             if let returnDestination = segue.destination as? ReturnItemViewController {
                 
                 returnDestination.delegateDepartmentLibraryData = delegateForCheckoutTable
-                
+               
+//                print(delegateForCheckoutTable?.checkoutlog)
+//
+//                if let index = tableView.indexPathForSelectedRow {
+//                    print("i got here!! !go to checkout return. this is blank")
+//                    returnDestination.delegateCheckoutData = checkoutItemArray?[index.row]
+//
+//                }
+            
+            }
+            
+            if let destination = segue.destination as? ReturnItemViewController {
+                print(tableView.indexPathForSelectedRow)
                 if let index = tableView.indexPathForSelectedRow {
-                    returnDestination.delegateCheckoutData = checkoutItemArray?[index.row]
+                    print("i got here!! !go to checkout return. this is blank")
+                    destination.delegateCheckoutData = checkoutItemArray?[index.row]
+
                 }
             }
+            
+            
         }
     }
+    
+    
+    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "goToEdit" {
+//            if let editDestination = segue.destination as? EditViewController {
+//                if let index = tableView.indexPathForSelectedRow {
+//                    editDestination.delegateForEditController = libraryItemArray?[index.row]
+//                }
+//            }
+//        }
+//    }
 
     
     //get the items from database

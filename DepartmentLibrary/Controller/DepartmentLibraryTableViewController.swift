@@ -77,8 +77,6 @@ class DepartmentLibraryTableViewController: UITableViewController {
         
         self.performSegue(withIdentifier: "goToEdit", sender: self)
         
-        
-        tableView.deselectRow(at: indexPath, animated: true)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
