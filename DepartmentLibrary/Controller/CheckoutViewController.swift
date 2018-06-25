@@ -87,6 +87,12 @@ class CheckoutViewController: UIViewController, UITextFieldDelegate {
                     newItem.dueCreated = dueDateItem
                     currentItemList.checkoutlog.append(newItem)
                 }
+                
+                if let currentItem = self.delegateForCheckout {
+                    currentItem.available = !currentItem.available
+                }
+                
+                
             }
         }catch{
             print("Error saving context \(error)")
