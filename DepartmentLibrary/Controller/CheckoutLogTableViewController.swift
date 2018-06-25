@@ -93,24 +93,16 @@ class CheckoutLogTableViewController: UITableViewController {
                 
                 returnDestination.delegateDepartmentLibraryData = delegateForCheckoutTable
                
-//                print(delegateForCheckoutTable?.checkoutlog)
-//
-//                if let index = tableView.indexPathForSelectedRow {
-//                    print("i got here!! !go to checkout return. this is blank")
-//                    returnDestination.delegateCheckoutData = checkoutItemArray?[index.row]
-//
-//                }
-            
-            }
-            
-            if let destination = segue.destination as? ReturnItemViewController {
-                print(tableView.indexPathForSelectedRow)
+                print(delegateForCheckoutTable?.checkoutlog)
+
                 if let index = tableView.indexPathForSelectedRow {
                     print("i got here!! !go to checkout return. this is blank")
-                    destination.delegateCheckoutData = checkoutItemArray?[index.row]
+                    returnDestination.delegateCheckoutData = checkoutItemArray?[index.row]
 
                 }
+            
             }
+
             
             
         }

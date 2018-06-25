@@ -38,6 +38,10 @@ class DepartmentLibraryTableViewController: UITableViewController {
         tableView.estimatedRowHeight = 110;
         
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        tableView.reloadData()
+    }
 
     
     
@@ -95,7 +99,7 @@ class DepartmentLibraryTableViewController: UITableViewController {
     //MARK: Data Manipulation Methods
     func save(library: DepartmentLibrary){
         do{
-//            let realm = try! Realm()
+
             try realm.write {
                 realm.add(library)
             }
@@ -108,7 +112,6 @@ class DepartmentLibraryTableViewController: UITableViewController {
     
     //get the items from database
     func loadItems() {
-//        let realm = try! Realm()
         libraryItemArray = realm.objects(DepartmentLibrary.self).sorted(byKeyPath: "available", ascending: false)
         
         self.tableView.reloadData()

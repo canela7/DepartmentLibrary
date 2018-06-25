@@ -47,7 +47,7 @@ class ReturnItemViewController: UIViewController {
         if let returnItem = delegateCheckoutData {
             studentNameReturnLabel.text = "Student Name:  \(returnItem.studentName)"
             studentCinReturnLabel.text = "Student CIN: \(returnItem.cin)"
-            dueDateReturnLabel.text = ",,,"
+            dueDateReturnLabel.text = "Due Date: \(returnItem.dueCreated)"
         }
         
            
@@ -56,7 +56,7 @@ class ReturnItemViewController: UIViewController {
         
         
         let dateString = dateFormatter(with: datepicker.date)
-        todayDateReturnLabel.text = "Return date \(dateString)"
+        todayDateReturnLabel.text = "Returning  date: \(dateString)"
         
     }
 

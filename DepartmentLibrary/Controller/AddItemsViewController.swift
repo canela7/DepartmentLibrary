@@ -105,7 +105,8 @@ class AddItemsViewController: UIViewController, UITextFieldDelegate {
             print("Error saving context \(error)")
         }
         
-        performSegue(withIdentifier: "goToDepartmentLibrary", sender: self)
+        //performSegue(withIdentifier: "goToDepartmentLibrary", sender: self)
+        navigationController?.popViewController(animated: true)
         
         
         
