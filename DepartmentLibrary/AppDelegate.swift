@@ -19,10 +19,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        print(Realm.Configuration.defaultConfiguration.fileURL!)
-        
-        let config = Realm.Configuration(fileURL: Realm.Configuration.defaultConfiguration.fileURL!, deleteRealmIfMigrationNeeded: true)
-        
         initializeRealm()
         
         do{
@@ -31,16 +27,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print("Error initalising new realm, \(error)")
         }
         
+
+
+        print(Realm.Configuration.defaultConfiguration.fileURL!)
+
+
         return true
     }
 
     private func initializeRealm() {
-        let realm = try! Realm()
+
+
+        let config = Realm.Configuration(fileURL: Realm.Configuration.defaultConfiguration.fileURL!, deleteRealmIfMigrationNeeded: true)
+
+        let realm = try! Realm(configuration: config)
+
         guard realm.isEmpty else { return }
+
 
         try! realm.write {
             realm.add(DepartmentLibrary())
         }
+        
     }
     
     

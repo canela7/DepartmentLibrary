@@ -102,7 +102,6 @@ class EditViewController: UIViewController, UITextFieldDelegate {
 
         if let editItem = delegateForEditController {
             do{
-//                let realm = try! Realm()
                 try realm.write {
                     editItem.name = nameTextfield
                     editItem.authorName = authorTextfield
@@ -114,10 +113,34 @@ class EditViewController: UIViewController, UITextFieldDelegate {
             }
         }
         
-        performSegue(withIdentifier: "goToDepartmentLibrayFromEdit", sender: self)
+      
+        navigationController?.popViewController(animated: true)
         
         print("Triggered!")
     }
+    
+    @IBAction func checkoutButtonPressed(_ sender: Any) {
+        performSegue(withIdentifier: "goToCheckoutItem", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToCheckoutItem" {
+            if let destination = segue.destination as? CheckoutViewController  {
+               destination.delegateForCheckout = delegateForEditController
+            }
+        }else if segue.identifier == "goToCheckoutLog" {
+            if let destinationForCheckoutTable = segue.destination as? CheckoutLogTableViewController  {
+                destinationForCheckoutTable.delegateForCheckoutTable = delegateForEditController
+            }
+        }
+    }
+    
+    
+    
+    
+    
+    
+    
 }
 
 

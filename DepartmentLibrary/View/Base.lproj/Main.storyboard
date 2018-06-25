@@ -81,7 +81,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1636" y="118"/>
+            <point key="canvasLocation" x="1636" y="116"/>
         </scene>
         <!--Department Library-->
         <scene sceneID="oe7-HS-mt4">
@@ -294,7 +294,7 @@
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="tbe-GE-A51" kind="show" identifier="goToCheckoutItem" id="G5s-ee-pgD"/>
+                                    <action selector="checkoutButtonPressed:" destination="lpC-tF-LTf" eventType="touchUpInside" id="WuF-37-2tM"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -325,7 +325,7 @@
                         <outlet property="editInformationTextField" destination="hoT-9s-HOW" id="J1C-mt-PRZ"/>
                         <outlet property="editNameTextField" destination="T9q-8e-sBL" id="6WL-Pr-6jg"/>
                         <outlet property="editSelectedType" destination="SiL-Lt-6k0" id="2fo-32-DX9"/>
-                        <segue destination="akU-TK-hcg" kind="show" identifier="goToDepartmentLibrayFromEdit" id="cX7-h4-Icg"/>
+                        <segue destination="tbe-GE-A51" kind="show" identifier="goToCheckoutItem" id="gL3-w3-6g5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hts-Hd-ish" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -341,13 +341,49 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="checkoutLogCell" rowHeight="149" id="yLz-zQ-vSL">
-                                <rect key="frame" x="0.0" y="28" width="375" height="149"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="checkoutLogCell" rowHeight="155" id="yLz-zQ-vSL" customClass="CheckoutCustomCell" customModule="DepartmentLibrary" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="155"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yLz-zQ-vSL" id="Tt8-FR-Fct">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="148.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="154.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="61n-zM-fXq">
+                                            <rect key="frame" x="0.0" y="8" width="375" height="138"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Student Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K4r-JV-RTa">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="32.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Due Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1A5-Mb-YAb">
+                                                    <rect key="frame" x="0.0" y="52.5" width="375" height="33"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date Returned" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IRb-sH-Xft">
+                                                    <rect key="frame" x="0.0" y="105.5" width="375" height="32.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="61n-zM-fXq" firstAttribute="leading" secondItem="Tt8-FR-Fct" secondAttribute="leading" id="1Hy-q1-zgu"/>
+                                        <constraint firstAttribute="bottom" secondItem="61n-zM-fXq" secondAttribute="bottom" constant="8" id="SlD-0j-jH7"/>
+                                        <constraint firstItem="61n-zM-fXq" firstAttribute="top" secondItem="Tt8-FR-Fct" secondAttribute="top" constant="8" id="fc5-dZ-N4x"/>
+                                        <constraint firstAttribute="trailing" secondItem="61n-zM-fXq" secondAttribute="trailing" id="p8E-hy-KEr"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="dateReturnedLabel" destination="IRb-sH-Xft" id="glL-AZ-D1n"/>
+                                    <outlet property="dueDateLabel" destination="1A5-Mb-YAb" id="m7P-En-Zro"/>
+                                    <outlet property="studentNameLabel" destination="K4r-JV-RTa" id="cZE-yX-wmC"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -355,10 +391,92 @@
                             <outlet property="delegate" destination="p0Y-YV-boJ" id="Vz1-yJ-ywo"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <segue destination="MEI-1J-KIW" kind="show" identifier="goToReturnView" id="mcB-59-9JU"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EBm-Ya-R2L" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3213.5999999999999" y="-1774.3628185907048"/>
+            <point key="canvasLocation" x="3970" y="117"/>
+        </scene>
+        <!--Return Item View Controller-->
+        <scene sceneID="gpY-ev-de8">
+            <objects>
+                <viewController id="MEI-1J-KIW" customClass="ReturnItemViewController" customModule="DepartmentLibrary" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dRV-ZI-I7S">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Item Name: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CPQ-Bb-NHd">
+                                <rect key="frame" x="16" y="89" width="117" height="55"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="4dT-ME-yHx">
+                                <rect key="frame" x="8" y="247.5" width="359" height="172"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Student Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="P4D-PD-7Iy">
+                                        <rect key="frame" x="0.0" y="0.0" width="359" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Student CIN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="dGc-YI-q1z">
+                                        <rect key="frame" x="0.0" y="50.5" width="359" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Due Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="3ad-09-n37">
+                                        <rect key="frame" x="0.0" y="101" width="359" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Today's Date:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="6D1-ny-8y5">
+                                        <rect key="frame" x="0.0" y="151.5" width="359" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YXc-IV-QF4">
+                                <rect key="frame" x="135" y="536" width="118" height="53"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <inset key="contentEdgeInsets" minX="20" minY="10" maxX="20" maxY="10"/>
+                                <state key="normal" title="Return">
+                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="returnButtonPressed:" destination="MEI-1J-KIW" eventType="touchUpInside" id="0Wa-PT-dRf"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="R5x-lA-4WE" firstAttribute="trailing" secondItem="4dT-ME-yHx" secondAttribute="trailing" constant="8" id="6Rf-rg-zwT"/>
+                            <constraint firstItem="4dT-ME-yHx" firstAttribute="centerX" secondItem="dRV-ZI-I7S" secondAttribute="centerX" id="JLu-7B-jlc"/>
+                            <constraint firstItem="4dT-ME-yHx" firstAttribute="centerY" secondItem="dRV-ZI-I7S" secondAttribute="centerY" id="Tu8-fL-bJh"/>
+                            <constraint firstItem="4dT-ME-yHx" firstAttribute="leading" secondItem="R5x-lA-4WE" secondAttribute="leading" constant="8" id="Ynq-yF-Wny"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="R5x-lA-4WE"/>
+                    </view>
+                    <connections>
+                        <outlet property="dueDateReturnLabel" destination="3ad-09-n37" id="shJ-IB-Ogw"/>
+                        <outlet property="itemNameReturnLabel" destination="CPQ-Bb-NHd" id="hnR-O6-47A"/>
+                        <outlet property="studentCinReturnLabel" destination="dGc-YI-q1z" id="dCs-gD-tIB"/>
+                        <outlet property="studentNameReturnLabel" destination="P4D-PD-7Iy" id="vZX-nw-vKY"/>
+                        <outlet property="todayDateReturnLabel" destination="6D1-ny-8y5" id="G5l-oA-pMY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hqo-oZ-wjG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5253.6000000000004" y="114.69265367316342"/>
         </scene>
         <!--Checkout Item-->
         <scene sceneID="8BF-wO-Le9">
@@ -408,12 +526,18 @@
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="tbe-GE-A51" id="KDg-4r-buh"/>
+                                                </connections>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Author of Item" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="but-aN-y5R">
                                                 <rect key="frame" x="0.0" y="120" width="261" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="tbe-GE-A51" id="O2S-HO-0fe"/>
+                                                </connections>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Today's Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gqP-59-ANp">
                                                 <rect key="frame" x="0.0" y="240" width="261" height="30"/>
@@ -426,6 +550,9 @@
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="tbe-GE-A51" id="wos-Tp-7gO"/>
+                                                </connections>
                                             </textField>
                                         </subviews>
                                     </stackView>
@@ -444,7 +571,7 @@
                     <navigationItem key="navigationItem" title="Checkout Item" id="fjx-8C-cID">
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="OsD-8G-05f">
                             <connections>
-                                <segue destination="p0Y-YV-boJ" kind="show" identifier="goToCheckoutLog" id="zlk-Lf-ZG2"/>
+                                <action selector="doneBarButtonPressed:" destination="tbe-GE-A51" id="1EX-Yb-1Ig"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -453,6 +580,7 @@
                         <outlet property="dueDateTextField" destination="eiz-SU-15j" id="TLY-ER-Evx"/>
                         <outlet property="studentCinTextField" destination="but-aN-y5R" id="9VL-FQ-h8z"/>
                         <outlet property="studentNameTextField" destination="GFD-aF-Oz1" id="fGF-va-ICo"/>
+                        <segue destination="akU-TK-hcg" kind="show" identifier="goToDepartmentLibaray" id="l45-RT-N8p"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dft-cS-E6E" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -564,7 +692,6 @@
                         <outlet property="informationTextField" destination="fVn-8G-2xO" id="8rv-Rf-kK5"/>
                         <outlet property="itemNameTextField" destination="ca4-mz-WZF" id="dwR-eD-6W0"/>
                         <outlet property="typeTextField" destination="Y1P-z7-BAJ" id="XbU-fv-ctA"/>
-                        <segue destination="akU-TK-hcg" kind="show" identifier="goToDepartmentLibrary" id="Z9Y-RT-fMz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kna-gB-JRy" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -587,14 +714,13 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HsL-24-4rV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="788" y="133"/>
+            <point key="canvasLocation" x="665" y="117"/>
         </scene>
     </scenes>
     <resources>
         <image name="background" width="2880" height="5120"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="zlk-Lf-ZG2"/>
-        <segue reference="iVu-N8-nUd"/>
+        <segue reference="l45-RT-N8p"/>
     </inferredMetricsTieBreakers>
 </document>
