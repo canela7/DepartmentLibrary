@@ -66,7 +66,10 @@ class CheckoutLogTableViewController: UITableViewController {
             }
             
             if let dateReturned = item.dateReturned {
-                cell.dateReturnedLabel.text = "Item Returned  \(dateReturned))"
+                
+                 let dueReturn = dateFormatter.string(from: dateReturned)
+                
+                cell.dateReturnedLabel.text = "Item Returned:  \(dueReturn)"
             }else {
                 cell.dateReturnedLabel.text = "Item not yet Returned"
             }

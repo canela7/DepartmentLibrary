@@ -81,7 +81,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1636" y="116"/>
+            <point key="canvasLocation" x="1585" y="133"/>
         </scene>
         <!--Department Library-->
         <scene sceneID="oe7-HS-mt4">
@@ -454,6 +454,7 @@
                                 </state>
                                 <connections>
                                     <action selector="returnButtonPressed:" destination="MEI-1J-KIW" eventType="touchUpInside" id="0Wa-PT-dRf"/>
+                                    <segue destination="akU-TK-hcg" kind="show" identifier="goToDepartmentLibarayFromReturn" id="zJi-gk-qlR"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -476,7 +477,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hqo-oZ-wjG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5253.6000000000004" y="114.69265367316342"/>
+            <point key="canvasLocation" x="3969" y="1168"/>
         </scene>
         <!--Checkout Item-->
         <scene sceneID="8BF-wO-Le9">

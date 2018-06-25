@@ -47,13 +47,10 @@ class ReturnItemViewController: UIViewController {
         if let returnItem = delegateCheckoutData {
             studentNameReturnLabel.text = "Student Name:  \(returnItem.studentName)"
             studentCinReturnLabel.text = "Student CIN: \(returnItem.cin)"
-            dueDateReturnLabel.text = "Due Date: \(returnItem.dueCreated)"
+            
+            let dateString = dateFormatter(with: returnItem.dueCreated!)
+            dueDateReturnLabel.text = "Due Date: \(dateString)"
         }
-        
-           
-       
-        
-        
         
         let dateString = dateFormatter(with: datepicker.date)
         todayDateReturnLabel.text = "Returning  date: \(dateString)"
@@ -65,6 +62,20 @@ class ReturnItemViewController: UIViewController {
     @IBAction func returnButtonPressed(_ sender: Any) {
         
         
+        if let returnItem = delegateDepartmentLibraryData, let returnUserDate = delegateCheckoutData {
+            do{
+                try realm.write {
+                       returnItem.available = !returnItem.available
+                    
+                       returnUserDate.dateReturned = Date()
+                    
+                }
+            }catch{
+                print("Error deleting category \(error)")
+            }
+        }
+        
+       //performSegue(withIdentifier: "goToDepartmentLibarayFromReturn", sender: self)
         
         
     }
@@ -78,6 +89,16 @@ class ReturnItemViewController: UIViewController {
         return date
         
     }
+    
+    func dateFormatterFromStringToDate(with dateString: String) -> Date {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .medium
+        dateFormatter.timeStyle = .none
+        let date = dateFormatter.date(from: dateString)
+        return date!
+        
+    }
+    
     
 }
 
