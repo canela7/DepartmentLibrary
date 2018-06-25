@@ -11,7 +11,7 @@ import RealmSwift
 
 class AddItemsViewController: UIViewController, UITextFieldDelegate {
 
-    @IBOutlet weak var addItemButtonPressed: UIButton!
+
     
     @IBOutlet weak var doneBarButtonPressed: UIBarButtonItem!
     @IBOutlet weak var itemNameTextField: UITextField!
@@ -105,7 +105,7 @@ class AddItemsViewController: UIViewController, UITextFieldDelegate {
             print("Error saving context \(error)")
         }
         
-        //performSegue(withIdentifier: "goToDepartmentLibrary", sender: self)
+    
         navigationController?.popViewController(animated: true)
         
         

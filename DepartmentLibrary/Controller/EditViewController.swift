@@ -113,8 +113,7 @@ class EditViewController: UIViewController, UITextFieldDelegate {
             }
         }
         
-       // performSegue(withIdentifier: "goToDepartmentLibrayFromEdit", sender: self)
-        
+      
         navigationController?.popViewController(animated: true)
         
         print("Triggered!")

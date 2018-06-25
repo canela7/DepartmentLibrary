@@ -325,7 +325,6 @@
                         <outlet property="editInformationTextField" destination="hoT-9s-HOW" id="J1C-mt-PRZ"/>
                         <outlet property="editNameTextField" destination="T9q-8e-sBL" id="6WL-Pr-6jg"/>
                         <outlet property="editSelectedType" destination="SiL-Lt-6k0" id="2fo-32-DX9"/>
-                        <segue destination="akU-TK-hcg" kind="show" identifier="goToDepartmentLibrayFromEdit" id="cX7-h4-Icg"/>
                         <segue destination="tbe-GE-A51" kind="show" identifier="goToCheckoutItem" id="gL3-w3-6g5"/>
                     </connections>
                 </viewController>
@@ -693,7 +692,6 @@
                         <outlet property="informationTextField" destination="fVn-8G-2xO" id="8rv-Rf-kK5"/>
                         <outlet property="itemNameTextField" destination="ca4-mz-WZF" id="dwR-eD-6W0"/>
                         <outlet property="typeTextField" destination="Y1P-z7-BAJ" id="XbU-fv-ctA"/>
-                        <segue destination="akU-TK-hcg" kind="show" identifier="goToDepartmentLibrary" id="Z9Y-RT-fMz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kna-gB-JRy" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -723,6 +721,6 @@
         <image name="background" width="2880" height="5120"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="FAe-mb-EQl"/>
+        <segue reference="l45-RT-N8p"/>
     </inferredMetricsTieBreakers>
 </document>
