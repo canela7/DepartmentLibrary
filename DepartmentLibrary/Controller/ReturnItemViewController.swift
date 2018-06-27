@@ -43,11 +43,11 @@ class ReturnItemViewController: UIViewController {
         if let returnItem = delegateDepartmentLibraryData {
             itemNameReturnLabel.text = returnItem.name
             
-//            if returnItem.available {
-//                returnButton.isEnabled = false
-//            }else {
-//                returnButton.isEnabled = true
-//            }
+            if returnItem.available {
+                returnButton.isHidden = true
+            }else {
+                returnButton.isEnabled = true
+            }
             
         }
         
