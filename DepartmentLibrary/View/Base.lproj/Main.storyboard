@@ -210,10 +210,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="vEa-xi-q1y">
-                                <rect key="frame" x="0.0" y="138" width="375" height="390"/>
+                                <rect key="frame" x="0.0" y="155" width="375" height="357"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="95" translatesAutoresizingMaskIntoConstraints="NO" id="oH1-VJ-Fwf" userLabel="Left Stack View">
-                                        <rect key="frame" x="0.0" y="1.5" width="87.5" height="387.5"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="80" translatesAutoresizingMaskIntoConstraints="NO" id="oH1-VJ-Fwf" userLabel="Left Stack View">
+                                        <rect key="frame" x="0.0" y="7.5" width="87.5" height="342.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FAR-ab-E9i">
                                                 <rect key="frame" x="0.0" y="0.0" width="87.5" height="20.5"/>
@@ -222,27 +222,27 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ecQ-rf-TNc">
-                                                <rect key="frame" x="0.0" y="115.5" width="87.5" height="20.5"/>
+                                                <rect key="frame" x="0.0" y="100.5" width="87.5" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Additional Information" textAlignment="natural" lineBreakMode="middleTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="0FA-Jm-U5X">
-                                                <rect key="frame" x="0.0" y="231" width="87.5" height="41"/>
+                                                <rect key="frame" x="0.0" y="201" width="87.5" height="41"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Item Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="w1Z-hp-gA4">
-                                                <rect key="frame" x="0.0" y="367" width="87.5" height="20.5"/>
+                                                <rect key="frame" x="0.0" y="322" width="87.5" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="90" translatesAutoresizingMaskIntoConstraints="NO" id="I8J-ee-R6c" userLabel="Right Stack View">
-                                        <rect key="frame" x="87.5" y="0.0" width="287.5" height="390"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="79" translatesAutoresizingMaskIntoConstraints="NO" id="I8J-ee-R6c" userLabel="Right Stack View">
+                                        <rect key="frame" x="87.5" y="0.0" width="287.5" height="357"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Name of Item" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="T9q-8e-sBL">
                                                 <rect key="frame" x="0.0" y="0.0" width="287.5" height="30"/>
@@ -254,7 +254,7 @@
                                                 </connections>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Author of Item" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="z8G-d7-OSi">
-                                                <rect key="frame" x="0.0" y="120" width="287.5" height="30"/>
+                                                <rect key="frame" x="0.0" y="109" width="287.5" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -263,7 +263,7 @@
                                                 </connections>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Information about the Item." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hoT-9s-HOW">
-                                                <rect key="frame" x="0.0" y="240" width="287.5" height="30"/>
+                                                <rect key="frame" x="0.0" y="218" width="287.5" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -272,7 +272,7 @@
                                                 </connections>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Select item Type" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SiL-Lt-6k0">
-                                                <rect key="frame" x="0.0" y="360" width="287.5" height="30"/>
+                                                <rect key="frame" x="0.0" y="327" width="287.5" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -284,12 +284,11 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Etw-v2-Sh6">
-                                <rect key="frame" x="128" y="612" width="118" height="42"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Etw-v2-Sh6">
+                                <rect key="frame" x="40" y="620" width="295" height="42"/>
                                 <color key="backgroundColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <inset key="contentEdgeInsets" minX="20" minY="10" maxX="20" maxY="10"/>
+                                <inset key="contentEdgeInsets" minX="40" minY="10" maxX="40" maxY="10"/>
                                 <state key="normal" title="Checkout">
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -300,8 +299,11 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="edX-0O-gig" firstAttribute="bottom" secondItem="Etw-v2-Sh6" secondAttribute="bottom" constant="5" id="Aj8-22-YHS"/>
+                            <constraint firstItem="edX-0O-gig" firstAttribute="trailing" secondItem="Etw-v2-Sh6" secondAttribute="trailing" constant="40" id="c6p-99-6bQ"/>
                             <constraint firstAttribute="trailing" secondItem="vEa-xi-q1y" secondAttribute="trailing" id="e0e-KU-rMZ"/>
                             <constraint firstItem="vEa-xi-q1y" firstAttribute="centerY" secondItem="yw0-vQ-cdi" secondAttribute="centerY" id="oqn-Sj-chy"/>
+                            <constraint firstItem="Etw-v2-Sh6" firstAttribute="leading" secondItem="edX-0O-gig" secondAttribute="leading" constant="40" id="pMz-8X-cZu"/>
                             <constraint firstItem="vEa-xi-q1y" firstAttribute="centerX" secondItem="yw0-vQ-cdi" secondAttribute="centerX" id="shO-mG-xkA"/>
                             <constraint firstItem="vEa-xi-q1y" firstAttribute="leading" secondItem="yw0-vQ-cdi" secondAttribute="leading" id="uAY-ue-3Wx"/>
                         </constraints>
@@ -320,6 +322,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="checkoutButton" destination="Etw-v2-Sh6" id="mg9-Qs-Rns"/>
                         <outlet property="doneBarButtonPressed" destination="YUI-qc-LIh" id="CHX-wi-5xq"/>
                         <outlet property="editAuthorTextField" destination="z8G-d7-OSi" id="NTR-A1-CXS"/>
                         <outlet property="editInformationTextField" destination="hoT-9s-HOW" id="J1C-mt-PRZ"/>
@@ -470,6 +473,7 @@
                     <connections>
                         <outlet property="dueDateReturnLabel" destination="3ad-09-n37" id="shJ-IB-Ogw"/>
                         <outlet property="itemNameReturnLabel" destination="CPQ-Bb-NHd" id="hnR-O6-47A"/>
+                        <outlet property="returnButton" destination="YXc-IV-QF4" id="sUK-YA-BRK"/>
                         <outlet property="studentCinReturnLabel" destination="dGc-YI-q1z" id="dCs-gD-tIB"/>
                         <outlet property="studentNameReturnLabel" destination="P4D-PD-7Iy" id="vZX-nw-vKY"/>
                         <outlet property="todayDateReturnLabel" destination="6D1-ny-8y5" id="G5l-oA-pMY"/>
@@ -722,6 +726,7 @@
         <image name="background" width="2880" height="5120"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="gL3-w3-6g5"/>
         <segue reference="l45-RT-N8p"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -68,16 +68,34 @@ class AddItemsViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     
-    func textFieldDidEndEditing(_ textField: UITextField) {
+//    func textFieldDidEndEditing(_ textField: UITextField) {
+//
+//        let allInputValues = itemNameTextField.text! + authorTextField.text! + informationTextField.text! + typeTextField.text!
+//
+//        if allInputValues == "" {
+//            doneBarButtonPressed.isEnabled = false
+//        } else {
+//            doneBarButtonPressed.isEnabled = true
+//        }
+//    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let oldText = textField.text!
+        let stringRange = Range(range, in: oldText)!
+        let newText = oldText.replacingCharacters(in: stringRange, with: string)
 
-        let allInputValues = itemNameTextField.text! + authorTextField.text! + informationTextField.text! + typeTextField.text!
-        
-        if allInputValues == "" {
+
+        if newText.isEmpty {
             doneBarButtonPressed.isEnabled = false
-        } else {
+        }else {
             doneBarButtonPressed.isEnabled = true
         }
+
+        return true
+
     }
+    
+    
  
     //Done bar button pressed
     @IBAction func doneBarButtonPressed(_ sender: Any) {

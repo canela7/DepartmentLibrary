@@ -12,6 +12,8 @@ import RealmSwift
 
 class EditViewController: UIViewController, UITextFieldDelegate {
 
+    @IBOutlet weak var checkoutButton: UIButton!
+    
     @IBOutlet weak var editNameTextField: UITextField!
     
     @IBOutlet weak var editAuthorTextField: UITextField!
@@ -43,6 +45,16 @@ class EditViewController: UIViewController, UITextFieldDelegate {
             editAuthorTextField.text = editItem.authorName
             editInformationTextField.text = editItem.additionalInformation
             editSelectedType.text = editItem.type
+            
+            if editItem.available {
+                checkoutButton.isEnabled = true
+             
+            }else {
+                checkoutButton.isEnabled = false
+                 checkoutButton.setTitle("Unable to Checkout", for: .normal)
+            }
+            
+            
         }
         
         

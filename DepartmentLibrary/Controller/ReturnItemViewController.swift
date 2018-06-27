@@ -21,6 +21,7 @@ class ReturnItemViewController: UIViewController {
     
     @IBOutlet weak var todayDateReturnLabel: UILabel!
     
+    @IBOutlet weak var returnButton: UIButton!
     
     
     var delegateDepartmentLibraryData: DepartmentLibrary?
@@ -41,7 +42,16 @@ class ReturnItemViewController: UIViewController {
         
         if let returnItem = delegateDepartmentLibraryData {
             itemNameReturnLabel.text = returnItem.name
+            
+//            if returnItem.available {
+//                returnButton.isEnabled = false
+//            }else {
+//                returnButton.isEnabled = true
+//            }
+            
         }
+        
+
         
         
         if let returnItem = delegateCheckoutData {
@@ -54,6 +64,9 @@ class ReturnItemViewController: UIViewController {
         
         let dateString = dateFormatter(with: datepicker.date)
         todayDateReturnLabel.text = "Returning  date: \(dateString)"
+        
+        
+        
         
     }
 
